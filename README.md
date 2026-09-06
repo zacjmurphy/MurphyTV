@@ -4,5 +4,5 @@ My Jellyfin Theme
 ## Install
 Add the following to your custom css section on Jellyfin.
 ```css
-@import url('https://cdn.jsdelivr.net/gh/zacjmurphy/MurphyTV/theme/main.css');
+@import url('https://cdn.jsdelivr.net/gh/zacjmurphy/MurphyTV@main/theme/main.css');
 ```
