@@ -1520,8 +1520,8 @@ html,
 }
 
 .itemProgressBar:not(.backgroundProgress):not(.playbackProgress):not(.transcodingProgress) {
-    backdrop-filter: var(--blurLarge);
-    background-color: var(--osdSeekBarBufferedColorAlpha) !important;
+    backdrop-filter: none !important;
+    background-color: transparent !important;
     border-radius: var(--largeRadius);
     height: .35em;
     overflow: hidden
@@ -3112,8 +3112,8 @@ div[data-role=controlgroup] a.ui-btn-active {
 .emby-select,
 .emby-textarea,
 .emby-select-withcolor {
-    background-color: var(--selectorBackgroundColor);
-    border: var(--defaultLighterBorder);
+    background-color: #252525 !important;
+    border: 0px solid transparent !important;
     border-radius: var(--smallRadius);
     padding: .5em !important
 }
@@ -5019,4 +5019,28 @@ button[title="Play All"] {
 .libraryPage .alphaPicker-fixed-right .MuiPaper-root.MuiPaper-elevation .MuiButtonBase-root:focus:not([aria-pressed="true"]),
 .libraryPage .alphaPicker-fixed-right .MuiPaper-root.MuiPaper-elevation .MuiButtonBase-root:active:not([aria-pressed="true"]) {
     color: #FF0000 !important;
+}
+
+.guideChannelImage {
+    width: 100% !important;
+    height: 70% !important;
+}
+
+.emby-scrollbuttons-button.paper-icon-button-light:hover .material-icons.chevron_right {
+    color: #000 !important;
+}
+
+.MuiDrawer-paper.MuiDrawer-paperAnchorLeft .MuiListItemText-root.MuiListItemText-multiline.css-9ac84v,
+.MuiListItem-root.MuiListItem-gutters.css-1ohqk82:has([d="m12 21.35-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"]) {
+    display: none !important;
+}
+
+.cardText.cardTextCentered.cardText-secondary {
+    font-weight: unset !important;
+}
+
+.section3 .card.overflowPortraitCard.card-hoverable.card-withuserdata .cardText.cardTextCentered.cardText-secondary:not(:has(.itemAction.textActionButton)) {
+    text-transform: capitalize !important;
+    font-weight: bold !important;
+    color: #FFF !important;
 }
