@@ -10,5 +10,5 @@ My personal Jellyfin theme.
 ## Install
 Add the following to your custom css section on Jellyfin.
 ```css
-@import url('https://cdn.jsdelivr.net/gh/zacjmurphy/MurphyTV@HEAD/theme/main.css');
+@import url('https://cdn.jsdelivr.net/gh/zacjmurphy/MurphyTV/theme/main.css');
 ```
