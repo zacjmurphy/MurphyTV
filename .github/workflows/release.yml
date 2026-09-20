@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify the tree matches the tag
+        # The release itself is drafted by docs/release.sh, from a machine that
+        # is already authenticated, so this workflow needs no write access.
+        run: python3 .github/verify-release.py "${GITHUB_REF_NAME}"
+
+      - name: Purge the jsDelivr edge cache
+        # Branch URLs are cached at the edge for 12h. Purging makes the new
+        # version reachable immediately for everyone importing @main.
+        run: |
+          for file in "theme/MurphyTV-latest.css" "README.md"; do
+            echo "purging ${file}"
+            curl -sS "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${file}" | head -c 300
+            echo
+          done

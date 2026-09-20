@@ -1,0 +1,1794 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --themeVersion: 'MurphyTV — v1.0.0' !important;
+    font-family: Inter, sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-style: normal !important;
+    font-weight: 425 !important;
+    -webkit-tap-highlight-color: transparent !important;
+    --fill: 1 !important;
+    --wght: 400 !important;
+    --grad: 0 !important;
+    --opsz: 30 !important;
+    color: var(--textColor) !important;
+    color-scheme: dark !important;
+    --largerRadius: 1.25em !important;
+    --largeRadius: 1em !important;
+    --smallRadius: 0.5em !important;
+    --smallerRadius: 0.375em !important;
+    --borderWidth: 0.06em !important;
+    --borderWidthDouble: 0.12em !important;
+    --defaultBorder: 0px solid transparent !important;
+    --defaultLighterBorder: 0px solid transparent !important;
+    --sidePadding: 3.3% !important;
+    --itemColumnGap: 1em !important;
+    --minEpisodeCardWidth: 26em !important;
+    --appBarHeight: 5em !important;
+    --blurSmallest: blur(2px) !important;
+    --blurDefault: blur(5px) !important;
+    --blurLarge: blur(10px) !important;
+    --blurLargest: blur(20px) !important;
+    --darkerGradientPoint: #000 !important;
+    --darkerGradientPointAlpha: #000 !important;
+    --lighterGradientPoint: #000 !important;
+    --lighterGradientPointAlpha: #000 !important;
+    --gradientPointAlpha: #000 !important;
+    --headerColor: #000 !important;
+    --drawerColor: #000 !important;
+    --borderColor: transparent !important;
+    --darkerBorderColor: transparent !important;
+    --lighterBorderColor: transparent !important;
+    --selectorBackgroundColor: #384252 !important;
+    --selectorBackgroundColorAlpha: rgba(56, 66, 82, .5) !important;
+    --textColor: #FFF !important;
+    --dimTextColor: #FFF !important;
+    --fullContrastColor: #fff !important;
+    --zeroContrastColor: #000 !important;
+    --svgIconFilter: none !important;
+    --clearLogoFilter: none !important;
+    --accentColor: #FF0000 !important;
+    --accentHoverColor: #FF0000 !important;
+    --semiTransparentAccentColor: hsla(0, 0%, 100%, .125) !important;
+    --btnPlayColor: #FF0000 !important;
+    --btnPlayBorderColor: #FF0000 !important;
+    --btnMiniPlayColor: #FF0000 !important;
+    --btnMiniPlayBorderColor: #FF0000 !important;
+    --btnDeleteColor: #a91d1d !important;
+    --btnDeleteBorderColor: #d95454 !important;
+    --btnSubmitColor: #3d36b2 !important;
+    --btnSubmitBorderColor: #756fe2 !important;
+    --checkboxCheckedBgColor: #FF0000 !important;
+    --highlightOutlineColor: #FF0000 !important;
+    --hoverBackgroundColor: var(--textColor) !important;
+    --hoverTabBackgroundColor: hsla(0, 0%, 100%, .9) !important;
+    --hoverTextColor: #fff !important;
+    --activeBackgroundColor: var(--semiTransparentAccentColor) !important;
+    --activeTextColor: #fff !important;
+    --cardHoverBorderColor: #FF0000 !important;
+    --cardResumeProgressColor: #FF0000 !important;
+    --multiSelectOverlayColor: rgba(0, 0, 0, .8) !important;
+    --dividerColor: transparent !important;
+    --textareaBackgroundColor: var(--selectorBackgroundColor) !important;
+    --tableBodyColor: #1f2937 !important;
+    --osdSeekBarPlayedColor: #FF0000 !important;
+    --osdSeekBarBufferedColorAlpha: hsla(0, 0%, 50%, .5) !important;
+    --osdSeekBarThumbColor: #FF0000 !important;
+    --backgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint) 35%, var(--lighterGradientPoint)) !important;
+    --cardBackgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint), 25%, var(--lighterGradientPoint)) !important;
+    --backgroundAlphaOverlay: linear-gradient(180deg, var(--darkerGradientPointAlpha) 80%, transparent) !important;
+    --headerColorGradient: linear-gradient(180deg, #000 30%, 55%, transparent 90%) !important;
+    --headerColorGradientAlt: linear-gradient(180deg, #000, 70%, transparent) !important;
+    --headerBlurMask: linear-gradient(180deg, #fff 50%, 85%, transparent) !important;
+    --cardFooterGradient: linear-gradient(0deg, #000, 40%, transparent) !important;
+    --topOSDGradient: linear-gradient(180deg, rgba(0, 0, 0, .8), 45%, transparent) !important;
+    --bottomOSDGradient: linear-gradient(0deg, rgba(0, 0, 0, .8), 45%, transparent) !important;
+    --hoverGradientV: linear-gradient(0deg, transparent, hsla(0, 0%, 100%, .35) 45%, hsla(0, 0%, 100%, .35) 55%, transparent) !important;
+    --hoverGradientH: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, .35) 45%, hsla(0, 0%, 100%, .35) 55%, transparent) !important;
+    --itemBackdropMask: linear-gradient(180deg, rgba(0, 0, 0, .8), 75%, transparent) !important;
+    --shadow: 0.1em 0.1em 0.15em rgba(0, 0, 0, .3) !important;
+    --cardShadow: 0 1px 6px 0px rgba(0, 0, 0, .3) !important;
+    --iconShadow: 0px 0px 2px rgba(0, 0, 0, .8), 1px 1px 0px rgba(0, 0, 0, .5) !important;
+    --headerBackground: var(--headerColorGradient) !important;
+    --loginPageBgUrl: url() !important;
+    --loginPageText: 'Login To Continue' !important;
+    --overlayPlayButtonPosition: 2.8em !important;
+    --extraCardButtonsVisibility: none !important;
+    --menuButtonVisibility: block !important;
+    --itemOriginalTitleVisibility: block !important;
+    --libraryLabelVisibility: none !important;
+    --clearLogoVisibility: block !important;
+    --itemTitleVisibility: none !important;
+    --artistClearLogoVisibility: block !important;
+    --artistTitleVisibility: none !important;
+    --artistPageBackground: unset !important;
+    --miniOverlayButtonVisibility: block !important;
+    --endsAtVisibility: block !important;
+    --criticsRatingVisibility: none !important;
+    --cardHoverEffect: "" !important;
+    --backdropTrimFromTop: 10% !important;
+    --resumeCardScale: 1 !important;
+}
+
+/*! MurphyTV for Jellyfin 12 "Modern" layout | v1.0.0 | GPL-2.0
+ *  https://github.com/zacjmurphy/MurphyTV
+ *  Load AFTER upstream ElegantFin. See the README for install. */
+
+:root {
+    --murphyTV-appBarHeight: 4rem;
+    --murphyTV-appBarHeightDesktop: 4.5rem;
+    --murphyTV-libraryToolbarHeight: 3.75rem;
+    --murphyTV-libraryToolbarGap: 0.75rem;
+    --murphyTV-appBarFade: 2.5rem;
+    --murphyTV-navRadius: 1rem;
+    --murphyTV-surfaceRadius: 1rem;
+    --murphyTV-menuGap: 0.5rem;
+    --murphyTV-surfaceBlur: var(--blurDefault);
+    --murphyTV-navPillBackground: var(--darkerGradientPointAlpha);
+    --murphyTV-osdToolbarHeight: 5rem;
+    --murphyTV-detailsBackdropPin: -30%;
+    --murphyTV-navPaddingInline: 1.1rem;
+    --murphyTV-navGap: 0.6rem;
+    --murphyTV-brandLogoSize: calc(var(--murphyTV-appBarIconSize) * 1.5);
+    --murphyTV-brandNameSize: 1.375rem;
+    --murphyTV-brandGap: 2.6rem;
+    --murphyTV-brandRuleColor: var(--borderColor);
+    --murphyTV-episodePreviewIcon: "video_library";
+    --murphyTV-appBarIconSize: 1.25rem;
+    --murphyTV-iconButtonGap: 0.58rem;
+    --murphyTV-linkMarkHeight: 1.4cap;
+    --murphyTV-elsewhereLabel: none;
+    --murphyTV-ratingsGridOpen: 0.24s;
+    --murphyTV-itemBarEnter: 0.35s;
+    --murphyTV-userMenuFontSize: 1.15rem;
+}
+
+:root,
+:root[data-theme] {
+    --jf-palette-background-default: var(--darkerGradientPoint);
+    --jf-palette-background-defaultChannel: 17 24 39;
+    --jf-palette-background-paper: var(--selectorBackgroundColor);
+    --jf-palette-background-paperChannel: 56 66 82;
+    --jf-palette-AppBar-defaultBg: var(--headerColor);
+    --jf-palette-AppBar-transparentBg: transparent;
+    --jf-palette-text-primary: var(--textColor);
+    --jf-palette-text-primaryChannel: 209 213 219;
+    --jf-palette-text-secondary: var(--dimTextColor);
+    --jf-palette-text-secondaryChannel: 156 163 175;
+    --jf-palette-text-disabled: rgba(209, 213, 219, 0.5);
+    --jf-palette-common-white: var(--fullContrastColor);
+    --jf-palette-common-whiteChannel: 255 255 255;
+    --jf-palette-primary-main: var(--accentColor);
+    --jf-palette-primary-mainChannel: 93 85 231;
+    --jf-palette-primary-light: var(--accentHoverColor);
+    --jf-palette-primary-dark: var(--btnSubmitColor);
+    --jf-palette-primary-contrastText: #fff;
+    --jf-palette-secondary-main: var(--accentColor);
+    --jf-palette-secondary-mainChannel: 93 85 231;
+    --jf-palette-secondary-contrastText: #fff;
+    --jf-palette-error-main: var(--btnDeleteColor);
+    --jf-palette-error-mainChannel: 169 29 29;
+    --jf-palette-error-light: var(--btnDeleteBorderColor);
+    --jf-palette-error-contrastText: #fff;
+    --jf-palette-Alert-infoFilledBg: var(--btnSubmitColor);
+    --jf-palette-Alert-infoFilledColor: #fff;
+    --jf-palette-divider: var(--dividerColor);
+    --jf-palette-dividerChannel: 255 255 255;
+    --jf-palette-action-hover: var(--semiTransparentAccentColor);
+    --jf-palette-action-selected: var(--activeBackgroundColor);
+    --jf-palette-action-focus: var(--semiTransparentAccentColor);
+    --jf-palette-action-active: var(--textColor);
+    --jf-palette-FilledInput-bg: var(--textareaBackgroundColor);
+    --jf-palette-FilledInput-borderColor: var(--borderColor);
+    --jf-palette-Button-inheritContainedBg: var(--selectorBackgroundColor);
+    --jf-palette-Button-inheritContainedHoverBg: var(--borderColor);
+    --jf-palette-SnackbarContent-bg: var(--drawerColor);
+    --jf-palette-SnackbarContent-color: var(--textColor);
+}
+
+:root[data-theme="light"] {
+    --jf-palette-background-defaultChannel: 242 242 242;
+    --jf-palette-background-paperChannel: 255 255 255;
+    --jf-palette-text-primaryChannel: 33 33 33;
+    --jf-palette-text-secondaryChannel: 89 89 89;
+    --jf-palette-text-disabled: rgba(33, 33, 33, 0.5);
+    --jf-palette-common-whiteChannel: 0 0 0;
+    --jf-palette-primary-mainChannel: 78 61 230;
+    --jf-palette-secondary-mainChannel: 78 61 230;
+    --jf-palette-error-mainChannel: 185 49 45;
+    --jf-palette-dividerChannel: 0 0 0;
+}
+
+[class*="Mui"]:not(.MuiIcon-root) {
+    font-family: inherit;
+}
+
+body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage) {
+    padding-top: 0 !important;
+}
+
+:root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle)::before,
+:root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root) #itemDetailPage:has(.musicParentName)::before {
+    --murphyTV-detailsPageTopOffset: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--murphyTV-detailsPageTopOffset)) 0 auto 0;
+    height: var(--murphyTV-detailsPageTopOffset);
+    background: var(--darkerGradientPointAlpha);
+    pointer-events: none;
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle):has(.detailImageContainer .portraitCard .folder):has(.detailLogo:not(.hide)) {
+    --murphyTV-detailsTitleSpace: calc(22.5vh + 9em);
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle):has(.detailImageContainer .portraitCard .folder):has(.detailLogo:not(.hide)) .detailRibbon {
+    min-height: 0;
+    padding-top: var(--murphyTV-detailsTitleSpace);
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle):has(.detailImageContainer .portraitCard .folder):has(.detailLogo:not(.hide)) .detailLogo {
+    top: calc(73vh - var(--secondaryItemPageNegativeSpace) + var(--murphyTV-detailsTitleSpace) - 0.5em);
+    height: min(25vh, calc(var(--murphyTV-detailsTitleSpace) - 0.5em));
+}
+
+:root.layout-mobile:has(.MuiAppBar-root) #myPreferencesMenuPage {
+    padding-top: 0 !important;
+}
+
+:root.layout-mobile body:has(.MuiAppBar-root) #itemDetailPage .itemBackdrop {
+    --murphyTV-detailsBackdropRise: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    box-sizing: content-box;
+    margin-top: calc(-1 * var(--murphyTV-detailsBackdropRise)) !important;
+    padding-top: var(--murphyTV-detailsBackdropRise);
+    top: var(--murphyTV-detailsBackdropPin, -30%);
+}
+
+:root.layout-mobile body:has(.MuiAppBar-root) #itemDetailPage .itemBackdrop::before {
+    position: absolute;
+    inset: 0;
+    height: auto;
+}
+
+:root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root):not(.hide-scroll) > .videoPlayerContainer {
+    position: fixed !important;
+    height: auto;
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root):not(.hide-scroll) > .videoPlayerContainer ~ #reactRoot > .backgroundContainer.withBackdrop {
+    opacity: 1;
+}
+
+:root.layout-mobile body:has(.MuiAppBar-root):not(.hide-scroll) > .videoPlayerContainer {
+    --murphyTV-themeVideoRise: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    position: absolute !important;
+    top: 0;
+    bottom: auto;
+    height: calc(var(--murphyTV-detailsBackdropHeight) + var(--murphyTV-themeVideoRise));
+    -webkit-mask: var(--itemBackdropMask);
+    mask: var(--itemBackdropMask);
+}
+
+:root.layout-mobile body:has(.MuiAppBar-root) {
+    --murphyTV-detailsBackdropHeight: 45vh;
+}
+
+:root.layout-mobile body:has(.MuiAppBar-root):is(
+        :has(#itemDetailPage:not(.hide) .subtitle),
+        :has(#itemDetailPage:not(.hide) .musicParentName),
+        :has(#itemDetailPage:not(.hide) .detailImageContainer :is(.backdropCard, .squareCard, .person, .queue, .book, .live_tv))) {
+    --murphyTV-detailsBackdropHeight: calc(100vh - 27vh - var(--secondaryItemPageNegativeSpace));
+}
+
+:root.layout-mobile body:has(.MuiAppBar-root):has(#itemDetailPage:not(.hide) .detailImageContainer .cardPadder-square > .person) {
+    --murphyTV-detailsBackdropHeight: calc(100vh - 4vh - var(--secondaryItemPageNegativeSpace));
+}
+
+:root.layout-mobile body:has(.MuiAppBar-root):not(.hide-scroll):has(> .videoPlayerContainer) #itemDetailPage .itemBackdrop {
+    background-image: none !important;
+}
+
+:root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root) #loginPage {
+    --murphyTV-loginPageRise: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    margin-top: calc(-1 * var(--murphyTV-loginPageRise));
+}
+
+body:has(.MuiAppBar-root) :is([role="button"], [role="tab"], [role="link"],
+        [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"],
+        [role="option"], [role="switch"], [role="checkbox"], [role="radio"],
+        .MuiButtonBase-root, .MuiChip-clickable, .MuiChip-deleteIcon,
+        .MuiSelect-select) {
+    cursor: pointer;
+}
+
+body:has(.MuiAppBar-root) :is([role="button"], .MuiButtonBase-root, .MuiSelect-select):is(:disabled, .Mui-disabled, [aria-disabled="true"]) {
+    cursor: default;
+}
+
+.MuiAppBar-root.MuiAppBar-colorTransparent,
+.MuiAppBar-root.MuiAppBar-colorDefault {
+    background: var(--appBarColor, var(--headerBackground));
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border: var(--appBarBorder, none);
+    border-width: 0 0 var(--borderWidth) 0;
+    box-shadow: none;
+    color: var(--textColor);
+}
+
+.MuiAppBar-root.MuiAppBar-colorTransparent::after,
+.MuiAppBar-root.MuiAppBar-colorDefault::after {
+    content: var(--appBarSeamlessBlur, "");
+    position: absolute;
+    inset: 0;
+    -webkit-backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    -webkit-mask: var(--headerBlurMask);
+    mask: var(--headerBlurMask);
+    z-index: -1;
+}
+
+.MuiAppBar-root.MuiAppBar-colorDefault:has(> .MuiToolbar-root:nth-child(2)) {
+    background: var(--appBarColor, var(--headerColor));
+}
+
+.MuiAppBar-root.MuiAppBar-colorDefault:has(> .MuiToolbar-root:nth-child(2))::after {
+    -webkit-mask: none;
+    mask: none;
+}
+
+.MuiAppBar-root.MuiAppBar-colorDefault:has(> .MuiToolbar-root:nth-child(2))::before {
+    content: "";
+    position: absolute;
+    inset: 100% 0 auto 0;
+    height: var(--murphyTV-appBarFade);
+    background: linear-gradient(180deg, var(--appBarColor, var(--headerColor)), transparent);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorTransparent,
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault {
+    background: none;
+    border: 0;
+}
+
+body:has(#loginPage:not(.hide)) .MuiAppBar-root::after,
+body:has(#loginPage:not(.hide)) .MuiAppBar-root::before {
+    content: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before,
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before {
+    content: "";
+    background: var(--appBarColor, var(--headerBackground));
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+    content: var(--appBarSeamlessBlur, "");
+    -webkit-backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    -webkit-mask: var(--headerBlurMask);
+    mask: var(--headerBlurMask);
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault::before,
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault::after {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before,
+    body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+        transition: opacity var(--murphyTV-itemBarEnter) ease;
+    }
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) {
+    color: var(--fullContrastColor);
+    text-shadow: var(--iconShadow);
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) .MuiSvgIcon-root {
+    filter: drop-shadow(0 0 2px hsla(0, 0%, 0%, 0.8)) drop-shadow(1px 1px 0 hsla(0, 0%, 0%, 0.5));
+}
+
+.MuiAppBar-root.MuiAppBar-positionFixed {
+    padding-top: max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px));
+}
+
+.MuiAppBar-root.MuiAppBar-positionFixed + div[aria-hidden="true"] {
+    min-height: calc(var(--murphyTV-appBarHeight)
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+}
+
+.MuiAppBar-root > .MuiToolbar-root:first-child {
+    min-height: var(--murphyTV-appBarHeight);
+    gap: 0;
+}
+
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) {
+    min-height: var(--murphyTV-libraryToolbarHeight);
+}
+
+:root.layout-desktop {
+    --murphyTV-appBarHeight: var(--murphyTV-appBarHeightDesktop);
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped) {
+    background-color: var(--murphyTV-navPillBackground);
+    border-radius: var(--murphyTV-navRadius);
+    color: var(--textColor);
+    font-size: 1rem;
+    font-weight: 400;
+    padding-block: 0.35rem;
+    padding-inline: var(--murphyTV-navPaddingInline);
+    margin-inline: calc(var(--murphyTV-navGap) / 2);
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped) .MuiButton-startIcon {
+    margin-left: 0;
+    margin-right: 0.6rem;
+}
+
+.MuiAppBar-root .MuiButton-textPrimary:not(.MuiButtonGroup-grouped) {
+    background: var(--btnPlayColor) !important;
+    border: 0 !important;
+    color: var(--zeroContrastColor) !important;
+}
+
+.layout-desktop .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped, .MuiButton-textPrimary, :has(.MuiButton-startIcon > img)):hover {
+    background-color: var(--hoverTabBackgroundColor);
+    color: var(--zeroContrastColor);
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) {
+    background-color: transparent;
+    color: var(--fullContrastColor);
+    font-size: var(--murphyTV-brandNameSize);
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    margin-inline: 0 var(--murphyTV-brandGap);
+    padding-block: 0;
+    padding-inline: 0;
+    position: relative;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img):has(+ .MuiButton-text)::after {
+    background: var(--murphyTV-brandRuleColor);
+    content: "";
+    height: 1.75rem;
+    pointer-events: none;
+    position: absolute;
+    right: calc((var(--murphyTV-brandGap) + var(--murphyTV-navGap) / 2) / -2);
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--borderWidth);
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img):not(:has(+ .MuiButton-text)) {
+    margin-inline: 0;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon {
+    margin-right: 0.75rem;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiTouchRipple-root {
+    display: none;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
+    max-height: var(--murphyTV-brandLogoSize) !important;
+    max-width: var(--murphyTV-brandLogoSize) !important;
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) {
+    text-shadow: var(--iconShadow);
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
+    filter: drop-shadow(0 0 2px hsla(0, 0%, 0%, 0.8)) drop-shadow(1px 1px 0 hsla(0, 0%, 0%, 0.5));
+}
+
+.MuiAppBar-root .MuiButtonGroup-contained {
+    background: var(--btnPlayColor);
+    border: 0;
+    border-radius: var(--murphyTV-navRadius);
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.MuiAppBar-root .MuiButtonGroup-contained .MuiButton-contained {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--zeroContrastColor) !important;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-inline: var(--murphyTV-navPaddingInline);
+}
+
+.MuiAppBar-root .MuiButtonGroup-contained .MuiButton-contained + .MuiButton-contained {
+    box-shadow: inset var(--borderWidth) 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.layout-desktop .MuiAppBar-root .MuiButtonGroup-contained .MuiButton-contained:hover {
+    background: rgba(0, 0, 0, 0.12) !important;
+    color: var(--zeroContrastColor) !important;
+}
+
+.MuiAppBar-root .MuiButtonGroup-text {
+    background: var(--murphyTV-navPillBackground);
+    border-radius: var(--murphyTV-navRadius);
+    overflow: hidden;
+}
+
+.MuiAppBar-root .MuiButtonGroup-text .MuiButton-root {
+    border-radius: 0;
+    color: var(--textColor);
+}
+
+.MuiAppBar-root .MuiButtonGroup-text .MuiButtonGroup-grouped:not(:last-of-type) {
+    border: var(--defaultBorder);
+    border-width: 0 var(--borderWidth) 0 0;
+}
+
+.layout-desktop .MuiAppBar-root .MuiButtonGroup-text .MuiButton-root:not(.Mui-disabled):hover {
+    background: var(--hoverTabBackgroundColor);
+    color: var(--zeroContrastColor);
+}
+
+.MuiAppBar-root .MuiButtonGroup-text .MuiButton-root.Mui-disabled {
+    color: var(--dimTextColor);
+    opacity: 0.5;
+}
+
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) .MuiButton-text .MuiTypography-root {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) .MuiButton-text:not(.MuiButtonGroup-grouped) {
+    min-height: calc(1.75rem + 12px);
+}
+
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) > .MuiButton-text:first-child {
+    margin-inline-start: 0;
+}
+
+:root.layout-mobile .MuiAppBar-root > .MuiToolbar-root:nth-child(2) {
+    padding-bottom: var(--murphyTV-libraryToolbarGap);
+}
+
+.MuiAppBar-root .MuiChip-root {
+    background-color: transparent;
+    border: var(--defaultBorder);
+    border-radius: var(--murphyTV-navRadius);
+    color: var(--dimTextColor);
+    font-size: 0.9rem;
+    height: auto;
+}
+
+.MuiAppBar-root .MuiChip-root .MuiChip-label {
+    padding-block: 0.25rem;
+    padding-inline: 0.7rem;
+}
+
+.MuiDrawer-root .MuiDrawer-paper {
+    background-color: var(--drawerColor);
+    background-image: none;
+    -webkit-backdrop-filter: var(--blurLarge);
+    backdrop-filter: var(--blurLarge);
+    border-right: var(--defaultBorder);
+    color: var(--textColor);
+}
+
+.MuiDrawer-root .MuiListItemButton-root {
+    border-radius: var(--smallRadius);
+    margin-inline: 0.4em;
+}
+
+.MuiDrawer-root .MuiListItemButton-root.Mui-selected {
+    background-color: var(--activeBackgroundColor);
+    color: var(--activeTextColor);
+}
+
+.MuiDrawer-root .MuiListItemIcon-root,
+.MuiDrawer-root .MuiListSubheader-root,
+.MuiDrawer-root .MuiDrawer-paper .sidebarHeader {
+    color: var(--dimTextColor);
+}
+
+.MuiDrawer-root .MuiDrawer-paper .navMenuOption {
+    border: var(--borderWidth) solid transparent;
+    margin-inline: 0.4em !important;
+    padding-block: 8px !important;
+    padding-inline: 16px !important;
+    gap: 0;
+    text-align: start;
+}
+
+.MuiDrawer-root .MuiDrawer-paper .navMenuOption > .navMenuOptionIcon {
+    min-width: 36px;
+    margin-inline-end: 0;
+    font-size: 1.5rem;
+}
+
+.MuiDrawer-root .MuiDrawer-paper .navMenuOption > .navMenuOptionText {
+    margin-block: 4px;
+    line-height: 1.5;
+}
+
+.MuiDrawer-root .MuiDrawer-paper .sidebarHeader {
+    margin-block: 0;
+    padding-inline: 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 48px;
+}
+
+.MuiMenu-paper,
+.MuiPopover-paper,
+.MuiDialog-paper,
+.MuiAutocomplete-paper {
+    background-color: var(--drawerColor);
+    background-image: none;
+    -webkit-backdrop-filter: var(--murphyTV-surfaceBlur);
+    backdrop-filter: var(--murphyTV-surfaceBlur);
+    border: var(--defaultBorder);
+    border-radius: var(--murphyTV-surfaceRadius);
+    box-shadow: var(--cardShadow);
+    color: var(--textColor);
+}
+
+.MuiPopover-paper[style*="transform-origin"][style*=" 0px;"] {
+    margin-top: var(--murphyTV-menuGap);
+}
+
+#app-user-menu .MuiPopover-paper {
+    margin-top: calc(var(--murphyTV-menuGap) + 0.5rem);
+}
+
+.MuiMenuItem-root,
+.MuiAutocomplete-option {
+    border-radius: var(--smallRadius);
+    margin-inline: 0.3em;
+}
+
+@media not all and (min-width: 600px) {
+    #app-user-menu .MuiMenuItem-root {
+        font-size: var(--murphyTV-userMenuFontSize);
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiTypography-root {
+        font-size: inherit;
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiSvgIcon-root {
+        font-size: 1.45em;
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiListItemIcon-root {
+        min-width: 2.25em;
+    }
+
+    #app-user-menu .MuiPopover-paper {
+        left: auto !important;
+        right: calc(max(3.3%, env(safe-area-inset-right)) + 1rem);
+    }
+}
+
+.MuiMenuItem-root.Mui-selected,
+.MuiAutocomplete-option[aria-selected="true"] {
+    background-color: var(--activeBackgroundColor);
+    color: var(--activeTextColor);
+}
+
+.MuiDivider-root {
+    border-color: var(--dividerColor);
+}
+
+#app-user-menu .MuiDivider-root[data-plugin-pages="true"] {
+    margin-block: calc(1 * var(--jf-spacing));
+}
+
+#app-user-menu .MuiListItemIcon-root > .material-icons {
+    font-size: 1.5rem;
+}
+
+#app-user-menu [data-plugin-pages="true"] .MuiButton-startIcon {
+    margin-inline: 0;
+}
+
+.MuiTooltip-tooltip {
+    background-color: var(--drawerColor);
+    -webkit-backdrop-filter: var(--blurDefault);
+    backdrop-filter: var(--blurDefault);
+    border: var(--defaultBorder);
+    border-radius: var(--smallerRadius);
+    color: var(--textColor);
+}
+
+.MuiBackdrop-root:not(.MuiBackdrop-invisible) {
+    background-color: var(--multiSelectOverlayColor);
+}
+
+.MuiFilledInput-root {
+    background-color: var(--textareaBackgroundColor);
+    border: var(--defaultBorder);
+    border-radius: var(--smallRadius);
+}
+
+.MuiFilledInput-root::before,
+.MuiFilledInput-root::after {
+    border-bottom: 0;
+}
+
+.MuiCheckbox-root.Mui-checked,
+.MuiRadio-root.Mui-checked,
+.MuiSwitch-switchBase.Mui-checked {
+    color: var(--checkboxCheckedBgColor);
+}
+
+.Mui-focusVisible {
+    outline: var(--borderWidthDouble) solid var(--highlightOutlineColor);
+    outline-offset: 2px;
+}
+
+body:has(.videoPlayerContainer-onTop) .MuiAppBar-root,
+body:has(.videoPlayerContainer-onTop) .MuiAppBar-root + div[aria-hidden="true"],
+body:has(.videoOsd-appBar) .MuiAppBar-root,
+body:has(.videoOsd-appBar) .MuiAppBar-root + div[aria-hidden="true"] {
+    display: none;
+}
+
+.osdHeader .MuiToolbar-root {
+    min-height: var(--murphyTV-osdToolbarHeight);
+    align-items: center;
+}
+
+.osdHeader.skinHeader {
+    pointer-events: none !important;
+}
+
+.osdHeader.skinHeader .MuiToolbar-root {
+    pointer-events: auto;
+}
+
+.videoOsdBottom.videoOsdBottom-maincontrols .buttons {
+    justify-content: center;
+}
+
+.videoOsdBottom.videoOsdBottom-maincontrols .osdControls {
+    container-type: inline-size;
+}
+
+@container (max-width: 62em) {
+    .videoOsdBottom.videoOsdBottom-maincontrols .buttons .paper-icon-button-light {
+        margin-inline: 0;
+    }
+}
+
+.osdHeader .videoOsd-appBar {
+    margin-inline: 0;
+    padding-inline: 0;
+}
+
+@container ef12mediabar (width < 96.7vw) {
+    .backdrop-container.full-width-video,
+    .gradient-overlay.full-width-video {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+}
+
+:root {
+    --murphyTV-mediaBarHeight: 62vh;
+    --murphyTV-mediaBarGap: 1.25rem;
+}
+
+@media only screen and (max-height: 767px) and (orientation: landscape) {
+    :root {
+        --murphyTV-mediaBarHeight: 57vh;
+    }
+}
+
+:root:has(#slides-container) {
+    --murphyTV-mediaBarV2Height: 90vh;
+    --murphyTV-mediaBarV2StockDrop: max(0px, calc(var(--murphyTV-mediaBarV2Height)
+        - var(--murphyTV-mediaBarHeight) - var(--murphyTV-mediaBarGap) - 5rem));
+    --murphyTV-mediaBarV2StockRail: calc(var(--murphyTV-appBarHeight)
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))
+        + 2.5rem + 1rem);
+}
+
+@container ef12mediabar (width < 96.7vw) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .mute-button {
+        top: 1em !important;
+    }
+}
+
+@container ef12mediabar (width >= 96.7vw) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) :is(.pause-button, .mute-button) {
+        top: var(--murphyTV-mediaBarV2StockRail) !important;
+    }
+
+    @media only screen and (max-width: 767px) and (orientation: portrait) {
+        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .slide {
+            padding-bottom: calc(var(--murphyTV-mediaBarV2StockDrop) + 1.5em);
+        }
+        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .dots-container {
+            top: calc(var(--murphyTV-mediaBarV2StockRail) + 1rem);
+            padding-bottom: 1rem !important;
+        }
+    }
+}
+
+@media (min-width: 75em) {
+    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
+        top: calc(var(--appBarHeight) + 1.25em + var(--murphyTV-mediaBarHeight)
+            + 0.5rem - var(--murphyTV-appBarHeight)) !important;
+    }
+}
+
+@media not all and (min-width: 75em) {
+    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
+        top: calc(var(--murphyTV-mediaBarHeight) + 1.25em + 0.5rem) !important;
+    }
+}
+
+@media not all and (min-width: 75em) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container {
+        --appBarHeight: calc((var(--murphyTV-appBarHeight)
+            + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))) / 2);
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.4em;
+        padding: 1.5em 1.25em;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .button-container {
+        margin-top: 0.85em;
+        gap: 0.75rem;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .play-button {
+        order: 1;
+        padding-inline: 1em !important;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .detail-button {
+        order: 2;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .favorite-button {
+        order: 3;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .trailer-button {
+        order: 4;
+        padding-inline: 0 !important;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container :is(.logo-container, .info-container, .genre, .button-container) {
+        position: static;
+        inset: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .logo-container {
+        height: auto;
+        max-height: 30%;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .logo {
+        position: static;
+        transform: none;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .logo-title-fallback {
+        font-size: clamp(1.5rem, 7vw, 2.75rem) !important;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .dots-container {
+        top: calc(1em + 1.1rem);
+        bottom: auto;
+        left: 15px;
+        transform: translateY(-50%);
+        padding: 0.7rem 0 0 !important;
+        max-width: calc(100% - 8rem);
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .progress-bar-dots {
+        top: 0;
+        bottom: auto;
+    }
+
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container :is(.pause-button, .mute-button) {
+        top: 1em !important;
+    }
+}
+
+body:has(.MuiAppBar-root) #slides-container :is(.detail-button, .favorite-button) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body:has(.MuiAppBar-root) #slides-container :is(.play-button, .trailer-button) {
+    margin: 0 !important;
+}
+
+body:has(.MuiAppBar-root) #slides-container .trailer-button {
+    border-radius: 0.5rem;
+}
+
+@media only screen and (orientation: landscape) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .dots-container {
+        bottom: 3em;
+        height: 3em;
+        padding-bottom: 0 !important;
+    }
+}
+
+body:has(.MuiAppBar-root) #slides-container {
+    container-type: size;
+    container-name: ef12mediabar;
+}
+
+:root:has(#slides-container .slide-content) {
+    --murphyTV-mediaBarV3Height: var(--murphyTV-mediaBarHeight, 62vh);
+    --murphyTV-mediaBarV3Inset: 3.75rem;
+    --murphyTV-mediaBarV3Rail: 1em;
+    --murphyTV-mediaBarV3Edge: 0.8em;
+    --murphyTV-mediaBarV3ChromePitch: 2.7em;
+    --murphyTV-mediaBarV3ArrowSize: 2.25rem;
+    --murphyTV-mediaBarV3SectionsTop: calc(var(--murphyTV-mediaBarV3Height)
+        + var(--murphyTV-mediaBarGap, 1.25rem) * 2 + 0.75rem);
+    --murphyTV-mediaBarV3BarHeight: var(--slideshow-height, 100vh);
+    --murphyTV-mediaBarV3BarUsed: max(var(--murphyTV-mediaBarV3BarHeight),
+        calc(var(--murphyTV-mediaBarV3SectionsTop) + 5rem + 20vh));
+    --murphyTV-mediaBarV3StockDrop: calc(var(--murphyTV-mediaBarV3BarUsed)
+        - var(--murphyTV-mediaBarV3SectionsTop) - 1.5rem);
+    --murphyTV-mediaBarV3StockRow: calc(var(--murphyTV-mediaBarV3StockDrop) - 2.7rem);
+}
+
+body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
+    --slideshow-height: var(--murphyTV-mediaBarV3BarUsed);
+}
+
+:root.layout-mobile #slides-container:has(.slide-content) {
+    --murphyTV-mediaBarV3ChromeSize: 2rem;
+    --murphyTV-mediaBarV3Inset: 1.25rem;
+}
+
+:root.layout-desktop #slides-container.layout-plate:has(.slide-content) {
+    --murphyTV-mediaBarV3Inset: 1rem;
+}
+
+@container ef12mediabar (width < 96.7vw) {
+    #slides-container:has(.slide-content) .slide-content {
+        bottom: var(--murphyTV-mediaBarV3Inset);
+        max-height: calc(100% - var(--murphyTV-mediaBarV3Inset));
+    }
+
+    #slides-container:has(.slide-content) .plot-container {
+        flex: 0 0 auto !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    #slides-container.layout-plate:has(.slide-content) .plate-specs {
+        flex: 0 0 auto !important;
+        overflow: visible !important;
+    }
+
+    #slides-container:has(.slide-content) .ss-settings-toggle {
+        top: var(--murphyTV-mediaBarV3Rail) !important;
+    }
+
+    #slides-container:has(.slide-content) .arrow {
+        top: auto !important;
+        left: auto !important;
+        bottom: var(--murphyTV-mediaBarV3Rail) !important;
+        transform: none !important;
+    }
+
+    #slides-container:has(.slide-content) .right-arrow {
+        right: var(--murphyTV-mediaBarV3Edge) !important;
+    }
+
+    #slides-container:has(.slide-content) .left-arrow {
+        right: calc(var(--murphyTV-mediaBarV3Edge) + var(--murphyTV-mediaBarV3ChromePitch)) !important;
+    }
+
+    #slides-container:has(.slide-content) .dots-container {
+        top: auto !important;
+        bottom: calc(var(--murphyTV-mediaBarV3Rail) + 0.55rem) !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+
+    #slides-container.layout-plate:has(.slide-content) .dots-container {
+        display: none !important;
+    }
+
+    #slides-container:has(.slide-content) :is(.backdrop-overlay, .gradient-overlay) {
+        background: none !important;
+    }
+
+    #slides-container:has(.slide-content) .slide {
+        --slideshow-bottom-fade: linear-gradient(to top, #000 0%, #000 100%);
+        --slideshow-height: var(--murphyTV-mediaBarV3BarHeight);
+    }
+
+    :root.layout-desktop #slides-container.layout-plate:has(.slide-content) .slide-content {
+        max-height: calc(100% - var(--murphyTV-mediaBarV3Inset) * 2);
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) :is(.pause-button, .volume-toggle, .ss-settings-toggle) {
+        width: var(--murphyTV-mediaBarV3ChromeSize) !important;
+        height: var(--murphyTV-mediaBarV3ChromeSize) !important;
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) :is(.pause-button, .volume-toggle, .ss-settings-toggle) i {
+        font-size: var(--murphyTV-mediaBarV3ChromeSize) !important;
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) .dots-container {
+        top: var(--murphyTV-mediaBarV3Rail) !important;
+        height: var(--murphyTV-mediaBarV3ChromeSize) !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        align-items: center !important;
+        bottom: auto !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    :root.layout-mobile #slides-container.layout-plate:has(.slide-content) .plate {
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+}
+
+body:has(#slides-container .slide-content) .homeSectionsContainer {
+    margin-top: 0 !important;
+    top: var(--murphyTV-mediaBarV3SectionsTop) !important;
+}
+
+@container ef12mediabar (width >= 96.7vw) {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide {
+        --murphyTV-mediaBarV3FadeSpan: calc(100% - var(--murphyTV-mediaBarV3SectionsTop) - 5rem);
+        --slideshow-bottom-fade: linear-gradient(to top,
+            transparent 0,
+            rgb(0 0 0 / 0.55) calc(var(--murphyTV-mediaBarV3FadeSpan) * 0.45),
+            #000 var(--murphyTV-mediaBarV3FadeSpan));
+    }
+
+    :root:is(.layout-desktop, .layout-mobile) #slides-container.layout-plate:has(.slide-content) .plate {
+        -webkit-mask-image: var(--slideshow-bottom-fade) !important;
+        mask-image: var(--slideshow-bottom-fade) !important;
+    }
+}
+
+@container ef12mediabar (width >= 96.7vw) {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide-content {
+        bottom: var(--murphyTV-mediaBarV3StockDrop);
+        max-height: calc(100% - var(--murphyTV-mediaBarV3StockDrop) - 2rem);
+    }
+
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .dots-container {
+        top: auto !important;
+        bottom: var(--murphyTV-mediaBarV3StockRow) !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .arrow {
+        top: auto !important;
+        bottom: var(--murphyTV-mediaBarV3StockRow) !important;
+        transform: none !important;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .MuiAppBar-root .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
+    .osdHeader .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
+    .cardOverlayButton-br .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled) {
+        background-color: var(--hoverBackgroundColor);
+        color: var(--zeroContrastColor);
+        text-shadow: none;
+    }
+}
+
+.MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)),
+.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) {
+    padding: 0.5545rem;
+    align-self: center;
+}
+
+.MuiAppBar-root .MuiIconButton-root,
+.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light,
+.osdHeader .MuiIconButton-root {
+    margin-inline: calc(var(--murphyTV-iconButtonGap) / 2);
+}
+
+.MuiAppBar-root .MuiIconButton-root:has(.MuiAvatar-root) {
+    margin-inline-end: 1rem;
+}
+
+.MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiSvgIcon-root,
+.MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiIcon-root,
+.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiSvgIcon-root,
+.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiIcon-root {
+    font-size: var(--murphyTV-appBarIconSize);
+}
+
+.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light {
+    width: 2.36rem !important;
+    height: 2.36rem !important;
+    padding: 0 !important;
+}
+
+.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light > .material-icons {
+    font-size: 1.25rem !important;
+}
+
+:is([aria-controls="app-remote-play-menu"], #popupPreviewButton) > svg,
+[aria-controls="app-remote-play-active-menu"] .MuiButton-startIcon > svg {
+    display: none;
+}
+
+:is([aria-controls="app-remote-play-menu"], #popupPreviewButton)::before,
+[aria-controls="app-remote-play-active-menu"] .MuiButton-startIcon::before {
+    display: inline-block;
+    font-family: var(--iconPack), "Material Icons";
+    font-feature-settings: "liga";
+    font-style: normal;
+    font-variation-settings: "FILL" var(--fill), "wght" var(--wght), "GRAD" var(--grad), "opsz" var(--opsz);
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1;
+    text-rendering: geometricPrecision;
+    text-transform: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+}
+
+[aria-controls="app-remote-play-menu"]::before {
+    content: "cast";
+    font-size: var(--murphyTV-appBarIconSize);
+}
+
+[aria-controls="app-remote-play-active-menu"] .MuiButton-startIcon::before {
+    content: "cast_connected";
+    font-size: var(--murphyTV-appBarIconSize);
+}
+
+#popupPreviewButton::before {
+    content: var(--murphyTV-episodePreviewIcon);
+    font-size: 1.25em;
+}
+
+.cardOverlayButton-br > button.cardOverlayButton {
+    box-sizing: border-box;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    position: relative;
+}
+
+.cardOverlayButton-br > button.cardOverlayButton > .cardOverlayButtonIcon,
+.cardOverlayButton-br > button.cardOverlayButton > .MuiSvgIcon-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.itemExternalLinks > .seerr-link {
+    display: inline-block;
+    margin-inline-start: 0.29em;
+}
+
+.itemExternalLinks > .seerr-link > .seerr-link-img {
+    display: inline;
+    width: auto !important;
+    height: var(--murphyTV-linkMarkHeight) !important;
+    vertical-align: calc((1cap - var(--murphyTV-linkMarkHeight)) / 2);
+}
+
+.streaming-lookup-container {
+    margin-block: 0.75em !important;
+}
+
+.streaming-lookup-container > div {
+    align-items: center !important;
+    background: var(--lighterGradientPointAlpha) !important;
+    border: var(--borderWidth) solid var(--borderColor) !important;
+    border-radius: var(--smallRadius) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5em !important;
+    margin: 0 !important;
+    padding: 0.5em 0.75em !important;
+}
+
+.streaming-lookup-container > div > div:first-child {
+    display: contents !important;
+}
+
+.streaming-lookup-container > div > div:first-child > div {
+    gap: 0.4em !important;
+    margin-left: auto !important;
+    order: 1 !important;
+}
+
+.streaming-lookup-container > div > div:first-child > .elsewhere-link-reset {
+    color: var(--textColor) !important;
+    flex: 0 0 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.streaming-lookup-container > div:has(.elsewhere-custom-branding)::before {
+    color: var(--textColor);
+    content: var(--murphyTV-elsewhereLabel, none);
+    flex: 0 0 100%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.streaming-lookup-container .elsewhere-custom-branding {
+    align-items: center !important;
+    background: var(--selectorBackgroundColor) !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+    flex: 0 0 auto !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    gap: 0.6em !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+}
+
+.streaming-lookup-container .elsewhere-custom-branding-icon {
+    height: 20px !important;
+    margin: 0 !important;
+    order: -1 !important;
+    width: 20px !important;
+}
+
+.streaming-lookup-container > div > div:not(:first-child, #streaming-result-container) {
+    gap: 0.4em !important;
+    margin: 0 !important;
+}
+
+.streaming-lookup-container > div > div:not(:first-child, #streaming-result-container) > div {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+    margin: 0 !important;
+}
+
+.streaming-lookup-container :is(.elsewhere-search-button, .elsewhere-settings-button) {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+}
+
+#streaming-result-container {
+    flex: 0 0 100% !important;
+    margin: 0 !important;
+    order: 2 !important;
+}
+
+#streaming-result-container > div {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: var(--darkerGradientPointAlpha) !important;
+    border: var(--borderWidth) solid var(--borderColor) !important;
+    border-radius: var(--smallRadius) !important;
+    margin: 0.4em 0 0 !important;
+    padding: 0.5em 0.75em !important;
+}
+
+#streaming-result-container .elsewhere-link-reset {
+    color: var(--textColor) !important;
+    flex: 1 1 auto !important;
+}
+
+#streaming-result-container > div > div:first-child {
+    margin-bottom: 0.4em !important;
+}
+
+#streaming-result-container > div > div:not(:first-child) {
+    gap: 0.4em !important;
+    margin: 0 !important;
+}
+
+#streaming-result-container > div > div:not(:first-child) > div {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+    margin: 0 !important;
+}
+
+#streaming-result-container button {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+}
+
+#streaming-result-container > div[style*="139, 19, 19"] {
+    background: color-mix(in srgb, var(--btnDeleteColor) 35%, transparent) !important;
+    border-color: var(--btnDeleteBorderColor) !important;
+}
+
+#streaming-result-container [style*="255, 20, 20"] {
+    color: var(--btnDeleteBorderColor) !important;
+}
+
+.tmdb-reviews-section > summary.sectionTitle {
+    font-weight: 600;
+}
+
+.tmdb-reviews-section .tmdb-review-card {
+    background: var(--lighterGradientPointAlpha);
+    border-left: 0;
+    border-radius: var(--smallRadius);
+    box-shadow: inset 0 0 0 var(--borderWidth) var(--borderColor);
+}
+
+.tmdb-reviews-section .tmdb-review-author {
+    color: var(--fullContrastColor);
+}
+
+.tmdb-reviews-section .tmdb-review-date {
+    color: var(--dimTextColor);
+}
+
+.tmdb-reviews-section .tmdb-review-text {
+    color: var(--textColor);
+}
+
+.tmdb-reviews-section .tmdb-review-toggle {
+    color: var(--dimTextColor);
+}
+
+.tmdb-reviews-section .tmdb-review-toggle:hover {
+    color: var(--textColor);
+}
+
+.tmdb-reviews-section .tmdb-review-rating {
+    border-radius: var(--smallerRadius);
+}
+
+.tmdb-reviews-section .je-review-btn {
+    background: var(--btnSubmitColor);
+    border: var(--borderWidth) solid var(--btnSubmitBorderColor);
+    border-radius: var(--smallRadius);
+    color: var(--fullContrastColor);
+}
+
+.tmdb-reviews-section .je-review-form {
+    background: var(--lighterGradientPointAlpha);
+    border: var(--borderWidth) solid var(--borderColor);
+    border-radius: var(--smallRadius);
+}
+
+.tmdb-reviews-section .je-review-textarea {
+    background: var(--selectorBackgroundColor);
+    border: var(--borderWidth) solid var(--lighterBorderColor);
+    border-radius: var(--smallRadius);
+    color: var(--textColor);
+}
+
+body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
+    padding-bottom: calc(0.3em + 0.2rem);
+}
+
+:root.layout-tv .mainAnimatedPage {
+    overflow-x: clip;
+}
+
+:root.layout-tv #slides-container .backdrop-container {
+    bottom: 0;
+    height: auto;
+}
+
+.cardScalable > .innerCardFooter.itemProgressBar {
+    position: absolute;
+    inset: auto 1em 1em;
+    width: auto;
+    padding: 0;
+}
+
+body [data-jf-ieg-root="1"] {
+    --axis: var(--selectorBackgroundColor);
+    --axis2: var(--lighterGradientPoint);
+    max-width: calc(100% - 3.3%);
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-box {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-panel {
+    background: var(--lighterGradientPointAlpha);
+    border-radius: var(--smallRadius);
+    border-top: 0;
+    box-shadow: inset 0 0 0 var(--borderWidth) var(--borderColor);
+    display: grid;
+    grid-template-rows: 1fr;
+    overflow: visible;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-body {
+    background: none;
+    min-height: 0;
+    overflow: hidden;
+    padding: 1rem 0.45rem 1rem 1rem !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    [data-jf-ieg-root="1"] .jf-ieg-panel {
+        transition:
+            grid-template-rows var(--murphyTV-ratingsGridOpen) ease,
+            opacity calc(var(--murphyTV-ratingsGridOpen) * 0.7) ease,
+            display var(--murphyTV-ratingsGridOpen) allow-discrete;
+    }
+
+    [data-jf-ieg-root="1"] .jf-ieg-panel[hidden] {
+        grid-template-rows: 0fr;
+        opacity: 0;
+    }
+
+    @starting-style {
+        [data-jf-ieg-root="1"] .jf-ieg-panel:not([hidden]) {
+            grid-template-rows: 0fr;
+            opacity: 0;
+        }
+    }
+
+    [data-jf-ieg-root="1"] .jf-ieg-toggle-icon {
+        transition: transform var(--murphyTV-ratingsGridOpen) ease;
+    }
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle {
+    background: none;
+    margin-bottom: 0.35em;
+    padding: 0;
+    width: fit-content;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle:hover {
+    background: none;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.layout-mobile [data-jf-ieg-root="1"] .jf-ieg-toggle-label {
+    font-size: 1.35rem;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle-icon {
+    color: var(--dimTextColor);
+    opacity: 1;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle:hover .jf-ieg-toggle-icon {
+    color: var(--textColor);
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-cell {
+    border-color: var(--borderColor);
+    border-radius: 0.5rem;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-corner,
+[data-jf-ieg-root="1"] .jf-ieg-season,
+[data-jf-ieg-root="1"] .jf-ieg-episode,
+[data-jf-ieg-root="1"] .jf-ieg-sticky-left {
+    border-color: var(--borderColor) !important;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-empty {
+    background: var(--lighterGradientPointAlpha) !important;
+    border-color: var(--borderColor) !important;
+    color: var(--dimTextColor) !important;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-link {
+    color: var(--dimTextColor) !important;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-link:hover {
+    color: var(--textColor) !important;
+}
+
+body #jf-hover-tooltip {
+    background: var(--drawerColor);
+    -webkit-backdrop-filter: var(--murphyTV-surfaceBlur);
+    backdrop-filter: var(--murphyTV-surfaceBlur);
+    border: var(--defaultBorder);
+    border-radius: var(--murphyTV-surfaceRadius);
+    box-shadow: var(--cardShadow);
+    color: var(--textColor);
+    font-family: inherit;
+}
+
+#jf-hover-tooltip .jf-tooltip-title {
+    color: var(--fullContrastColor);
+}
+
+#jf-hover-tooltip .jf-tooltip-meta {
+    color: var(--dimTextColor);
+}
+
+#jf-hover-tooltip .jf-tooltip-meta > span {
+    color: var(--borderColor) !important;
+    margin-inline: 0.5em;
+}
+
+#jf-hover-tooltip .jf-tooltip-overview {
+    color: var(--textColor);
+}
+
+.itemLinearProgress.MuiLinearProgress-root {
+    -webkit-backdrop-filter: var(--blurLarge);
+    backdrop-filter: var(--blurLarge);
+    background-color: var(--osdSeekBarBufferedColorAlpha);
+    border-radius: var(--largeRadius);
+    height: 0.35em;
+    inset: auto 2em 2em;
+    overflow: hidden;
+    width: auto;
+}
+
+.itemLinearProgress .MuiLinearProgress-bar {
+    background-color: var(--cardResumeProgressColor);
+    border-radius: 0 var(--largeRadius) var(--largeRadius) 0;
+    opacity: 0.75;
+}
+
+.countIndicator,
+.playedIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator {
+    background-color: #FF0000 !important;
+    color: white !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    filter: none !important;
+    border: 0px solid transparent !important;
+    font-weight: bolder;
+}
+
+#myPreferencesMenuPage .readOnlyContent:after {
+    content: var(--themeVersion);
+    color: #FF0000 !important;
+    font-weight: bold;
+}
+
+.pageTitle.pageTitleWithLogo.pageTitleWithDefaultLogo {
+    background-image: url('data:image/png;base64,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') !important;
+}
+
+img[src="icon-transparent.baba78f2a106d9baee83.png"] {
+    content: url('data:image/png;base64,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');
+    min-width: 120px !important;
+    min-height: 30px !important;
+}
+
+.MuiToolbar-root .MuiButton-text:has(img[src="icon-transparent.baba78f2a106d9baee83.png"]) {
+    font-size: 0px;
+}
+
+.cardText,
+.sectionTitle {
+    font-weight: bold;
+}
+
+.MuiDivider-root {
+    display: none !important;
+}
+
+.listItem-border {
+    border: 0px solid transparent !important;
+}
+
+.sectionTitle,
+.material-icons.chevron_right,
+.cardText.cardTextCentered.cardText-first {
+    color: white !important;
+}
+
+.MuiToolbar-root [aria-label="Search"],
+.MuiToolbar-root [aria-label="Cast to Device"],
+.MuiButtonBase-root.MuiButton-root.MuiButton-text:has([d="m12 21.35-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"]) {
+    display: none !important;
+}
+
+.btnSort {
+    display: none !important;
+}
+
+.headerTabs.sectionTabs {
+    display: none !important;
+}
+
+.itemDetailsGroup {
+    display: none !important;
+}
+
+.btnPlayTrailer {
+    display: none !important;
+}
+
+.btnPlayAll {
+    display: none !important;
+}
+
+.btnShuffle {
+    display: none !important;
+}
+
+#scenesCollapsible {
+    display: none !important;
+}
+
+.itemExternalLinks {
+    display: none !important;
+}
+
+.headerCastButton {
+    display: none !important;
+}
+
+.currentTimeText {
+    display: none !important;
+}
+
+.btnFilter-wrapper {
+    display: none !important;
+}
+
+.headerSearchButton {
+    display: none !important;
+}
+
+.emby-button:has(.favorite) {
+    display: none !important;
+}
+
+.itemTags.focuscontainer-x {
+    display: none !important;
+}
+
+.directorsGroup {
+    display: none !important;
+}
+
+.writersGroup {
+    display: none !important;
+}
+
+.studiosGroup {
+    display: none !important;
+}
+
+.btnUserRating {
+    display: none !important;
+}
+
+.progressring-spiner {
+    border: 3px solid #FF0000 !important;
+}
+
+.progressring-text {
+    font-weight: bolder;
+}
+
+.progressring-bg {
+    border: 0px solid transparent !important;
+}
+
+.MuiToolbar-root .MuiButtonBase-root {
+    font-weight: bolder !important;
+}
+
+button[title="Shuffle"],
+button[title="Play All"] {
+    display: none !important;
+}
+
+.libraryPage .alphaPicker-fixed-right .MuiPaper-root.MuiPaper-elevation {
+    background-color: #000 !important;
+}
+
+.libraryPage .alphaPicker-fixed-right .MuiPaper-root.MuiPaper-elevation .MuiButtonBase-root {
+    color: #FFF !important;
+    font-weight: bold !important;
+}
+
+.libraryPage .alphaPicker-fixed-right .MuiPaper-root.MuiPaper-elevation .MuiButtonBase-root:hover:not([aria-pressed="true"]),
+.libraryPage .alphaPicker-fixed-right .MuiPaper-root.MuiPaper-elevation .MuiButtonBase-root:focus:not([aria-pressed="true"]),
+.libraryPage .alphaPicker-fixed-right .MuiPaper-root.MuiPaper-elevation .MuiButtonBase-root:active:not([aria-pressed="true"]) {
+    color: #FF0000 !important;
+}
+
+.guideChannelImage {
+    width: 100% !important;
+    height: 70% !important;
+}
+
+.emby-scrollbuttons-button.paper-icon-button-light:hover .material-icons.chevron_right {
+    color: #000 !important;
+}
+
+.MuiDrawer-paper.MuiDrawer-paperAnchorLeft .MuiListItemText-root.MuiListItemText-multiline.css-9ac84v,
+.MuiListItem-root.MuiListItem-gutters.css-1ohqk82:has([d="m12 21.35-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"]) {
+    display: none !important;
+}
+
+.cardText.cardTextCentered.cardText-secondary {
+    font-weight: unset !important;
+}
+
+.section3 .card.overflowPortraitCard.card-hoverable.card-withuserdata .cardText.cardTextCentered.cardText-secondary:not(:has(.itemAction.textActionButton)) {
+    text-transform: capitalize !important;
+    font-weight: bold !important;
+    color: #FFF !important;
+}

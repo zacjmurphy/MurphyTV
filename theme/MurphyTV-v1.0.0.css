@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
+    --themeVersion: 'MurphyTV — v1.0.0';
     font-family: Inter, sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -4120,24 +4121,37 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     }
 }
 
+/*! MurphyTV for Jellyfin 12 "Modern" layout | v1.0.0 | GPL-2.0
+ *  https://github.com/zacjmurphy/MurphyTV
+ *  Load AFTER upstream above. See the README for install. */
+
 :root {
-    --ef12-appBarHeight: 4rem;
-    --ef12-appBarHeightDesktop: 4.5rem;
-    --ef12-libraryToolbarHeight: 3.75rem;
-    --ef12-libraryToolbarGap: 0.75rem;
-    --ef12-appBarFade: 2.5rem;
-    --ef12-navRadius: 1rem;
-    --ef12-surfaceRadius: 1rem;
-    --ef12-menuGap: 0.5rem;
-    --ef12-surfaceBlur: var(--blurDefault);
-    --ef12-navPillBackground: var(--darkerGradientPointAlpha);
-    --ef12-osdToolbarHeight: 5rem;
-    --ef12-navPaddingInline: 1.1rem;
-    --ef12-navGap: 0.6rem;
-    --ef12-episodePreviewIcon: 'video_library';
-    --ef12-appBarIconSize: 1.25rem;
-    --ef12-iconButtonGap: 0.58rem;
-    --ef12-linkMarkHeight: 1.4cap;
+    --murphyTV-appBarHeight: 4rem;
+    --murphyTV-appBarHeightDesktop: 4.5rem;
+    --murphyTV-libraryToolbarHeight: 3.75rem;
+    --murphyTV-libraryToolbarGap: 0.75rem;
+    --murphyTV-appBarFade: 2.5rem;
+    --murphyTV-navRadius: 1rem;
+    --murphyTV-surfaceRadius: 1rem;
+    --murphyTV-menuGap: 0.5rem;
+    --murphyTV-surfaceBlur: var(--blurDefault);
+    --murphyTV-navPillBackground: var(--darkerGradientPointAlpha);
+    --murphyTV-osdToolbarHeight: 5rem;
+    --murphyTV-detailsBackdropPin: -30%;
+    --murphyTV-navPaddingInline: 1.1rem;
+    --murphyTV-navGap: 0.6rem;
+    --murphyTV-brandLogoSize: calc(var(--murphyTV-appBarIconSize) * 1.5);
+    --murphyTV-brandNameSize: 1.375rem;
+    --murphyTV-brandGap: 2.6rem;
+    --murphyTV-brandRuleColor: var(--borderColor);
+    --murphyTV-episodePreviewIcon: "video_library";
+    --murphyTV-appBarIconSize: 1.25rem;
+    --murphyTV-iconButtonGap: 0.58rem;
+    --murphyTV-linkMarkHeight: 1.4cap;
+    --murphyTV-elsewhereLabel: none;
+    --murphyTV-ratingsGridOpen: 0.24s;
+    --murphyTV-itemBarEnter: 0.35s;
+    --murphyTV-userMenuFontSize: 1.15rem;
 }
 
 :root,
@@ -4206,13 +4220,27 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
 
 :root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle)::before,
 :root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root) #itemDetailPage:has(.musicParentName)::before {
-    --ef12-detailsPageTopOffset: calc(var(--ef12-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
-    content: '';
+    --murphyTV-detailsPageTopOffset: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    content: "";
     position: absolute;
-    inset: calc(-1 * var(--ef12-detailsPageTopOffset)) 0 auto 0;
-    height: var(--ef12-detailsPageTopOffset);
+    inset: calc(-1 * var(--murphyTV-detailsPageTopOffset)) 0 auto 0;
+    height: var(--murphyTV-detailsPageTopOffset);
     background: var(--darkerGradientPointAlpha);
     pointer-events: none;
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle):has(.detailImageContainer .portraitCard .folder):has(.detailLogo:not(.hide)) {
+    --murphyTV-detailsTitleSpace: calc(22.5vh + 9em);
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle):has(.detailImageContainer .portraitCard .folder):has(.detailLogo:not(.hide)) .detailRibbon {
+    min-height: 0;
+    padding-top: var(--murphyTV-detailsTitleSpace);
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage:has(.subtitle):has(.detailImageContainer .portraitCard .folder):has(.detailLogo:not(.hide)) .detailLogo {
+    top: calc(73vh - var(--secondaryItemPageNegativeSpace) + var(--murphyTV-detailsTitleSpace) - 0.5em);
+    height: min(25vh, calc(var(--murphyTV-detailsTitleSpace) - 0.5em));
 }
 
 :root.layout-mobile:has(.MuiAppBar-root) #myPreferencesMenuPage {
@@ -4220,10 +4248,11 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
 }
 
 :root.layout-mobile body:has(.MuiAppBar-root) #itemDetailPage .itemBackdrop {
-    --ef12-detailsBackdropRise: calc(var(--ef12-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    --murphyTV-detailsBackdropRise: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
     box-sizing: content-box;
-    margin-top: calc(-1 * var(--ef12-detailsBackdropRise)) !important;
-    padding-top: var(--ef12-detailsBackdropRise);
+    margin-top: calc(-1 * var(--murphyTV-detailsBackdropRise)) !important;
+    padding-top: var(--murphyTV-detailsBackdropRise);
+    top: var(--murphyTV-detailsBackdropPin, -30%);
 }
 
 :root.layout-mobile body:has(.MuiAppBar-root) #itemDetailPage .itemBackdrop::before {
@@ -4232,35 +4261,38 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
     height: auto;
 }
 
-:root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root):not(.hide-scroll)>.videoPlayerContainer {
+:root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root):not(.hide-scroll) > .videoPlayerContainer {
     position: fixed !important;
     height: auto;
 }
 
-:root.layout-desktop body:has(.MuiAppBar-root):not(.hide-scroll)>.videoPlayerContainer~#reactRoot>.backgroundContainer.withBackdrop {
+:root.layout-desktop body:has(.MuiAppBar-root):not(.hide-scroll) > .videoPlayerContainer ~ #reactRoot > .backgroundContainer.withBackdrop {
     opacity: 1;
 }
 
-:root.layout-mobile body:has(.MuiAppBar-root):not(.hide-scroll)>.videoPlayerContainer {
-    --ef12-themeVideoRise: calc(var(--ef12-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+:root.layout-mobile body:has(.MuiAppBar-root):not(.hide-scroll) > .videoPlayerContainer {
+    --murphyTV-themeVideoRise: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
     position: absolute !important;
     top: 0;
     bottom: auto;
-    height: calc(var(--ef12-detailsBackdropHeight) + var(--ef12-themeVideoRise));
+    height: calc(var(--murphyTV-detailsBackdropHeight) + var(--murphyTV-themeVideoRise));
     -webkit-mask: var(--itemBackdropMask);
     mask: var(--itemBackdropMask);
 }
 
 :root.layout-mobile body:has(.MuiAppBar-root) {
-    --ef12-detailsBackdropHeight: 45vh;
+    --murphyTV-detailsBackdropHeight: 45vh;
 }
 
-:root.layout-mobile body:has(.MuiAppBar-root):is( :has(#itemDetailPage:not(.hide) .subtitle), :has(#itemDetailPage:not(.hide) .musicParentName), :has(#itemDetailPage:not(.hide) .detailImageContainer :is(.backdropCard, .squareCard, .person, .queue, .book, .live_tv))) {
-    --ef12-detailsBackdropHeight: calc(100vh - 27vh - var(--secondaryItemPageNegativeSpace));
+:root.layout-mobile body:has(.MuiAppBar-root):is(
+        :has(#itemDetailPage:not(.hide) .subtitle),
+        :has(#itemDetailPage:not(.hide) .musicParentName),
+        :has(#itemDetailPage:not(.hide) .detailImageContainer :is(.backdropCard, .squareCard, .person, .queue, .book, .live_tv))) {
+    --murphyTV-detailsBackdropHeight: calc(100vh - 27vh - var(--secondaryItemPageNegativeSpace));
 }
 
 :root.layout-mobile body:has(.MuiAppBar-root):has(#itemDetailPage:not(.hide) .detailImageContainer .cardPadder-square > .person) {
-    --ef12-detailsBackdropHeight: calc(100vh - 4vh - var(--secondaryItemPageNegativeSpace));
+    --murphyTV-detailsBackdropHeight: calc(100vh - 4vh - var(--secondaryItemPageNegativeSpace));
 }
 
 :root.layout-mobile body:has(.MuiAppBar-root):not(.hide-scroll):has(> .videoPlayerContainer) #itemDetailPage .itemBackdrop {
@@ -4268,11 +4300,15 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
 }
 
 :root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root) #loginPage {
-    --ef12-loginPageRise: calc(var(--ef12-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
-    margin-top: calc(-1 * var(--ef12-loginPageRise));
+    --murphyTV-loginPageRise: calc(var(--murphyTV-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    margin-top: calc(-1 * var(--murphyTV-loginPageRise));
 }
 
-body:has(.MuiAppBar-root) :is([role="button"], [role="tab"], [role="link"], [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [role="option"], [role="switch"], [role="checkbox"], [role="radio"], .MuiButtonBase-root, .MuiChip-clickable, .MuiChip-deleteIcon, .MuiSelect-select) {
+body:has(.MuiAppBar-root) :is([role="button"], [role="tab"], [role="link"],
+        [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"],
+        [role="option"], [role="switch"], [role="checkbox"], [role="radio"],
+        .MuiButtonBase-root, .MuiChip-clickable, .MuiChip-deleteIcon,
+        .MuiSelect-select) {
     cursor: pointer;
 }
 
@@ -4280,8 +4316,8 @@ body:has(.MuiAppBar-root) :is([role="button"], .MuiButtonBase-root, .MuiSelect-s
     cursor: default;
 }
 
-.MuiAppBar-root.MuiAppBar-colorDefault,
-.MuiAppBar-root.MuiAppBar-colorTransparent {
+.MuiAppBar-root.MuiAppBar-colorTransparent,
+.MuiAppBar-root.MuiAppBar-colorDefault {
     background: var(--appBarColor, var(--headerBackground));
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
@@ -4291,9 +4327,9 @@ body:has(.MuiAppBar-root) :is([role="button"], .MuiButtonBase-root, .MuiSelect-s
     color: var(--textColor);
 }
 
-.MuiAppBar-root.MuiAppBar-colorDefault::after,
-.MuiAppBar-root.MuiAppBar-colorTransparent::after {
-    content: var(--appBarSeamlessBlur, '');
+.MuiAppBar-root.MuiAppBar-colorTransparent::after,
+.MuiAppBar-root.MuiAppBar-colorDefault::after {
+    content: var(--appBarSeamlessBlur, "");
     position: absolute;
     inset: 0;
     -webkit-backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
@@ -4313,26 +4349,60 @@ body:has(.MuiAppBar-root) :is([role="button"], .MuiButtonBase-root, .MuiSelect-s
 }
 
 .MuiAppBar-root.MuiAppBar-colorDefault:has(> .MuiToolbar-root:nth-child(2))::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 100% 0 auto 0;
-    height: var(--ef12-appBarFade);
+    height: var(--murphyTV-appBarFade);
     background: linear-gradient(180deg, var(--appBarColor, var(--headerColor)), transparent);
     pointer-events: none;
     z-index: -1;
 }
 
-body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault,
-body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorTransparent {
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorTransparent,
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault {
     background: none;
     border: 0;
 }
 
-body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root::after,
-body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root::before {
+body:has(#loginPage:not(.hide)) .MuiAppBar-root::after,
+body:has(#loginPage:not(.hide)) .MuiAppBar-root::before {
     content: none;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before,
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before {
+    content: "";
+    background: var(--appBarColor, var(--headerBackground));
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+    content: var(--appBarSeamlessBlur, "");
+    -webkit-backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    -webkit-mask: var(--headerBlurMask);
+    mask: var(--headerBlurMask);
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault::before,
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault::after {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before,
+    body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+        transition: opacity var(--murphyTV-itemBarEnter) ease;
+    }
 }
 
 body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) {
@@ -4348,38 +4418,38 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     padding-top: max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px));
 }
 
-.MuiAppBar-root>.MuiToolbar-root:first-child {
-    min-height: var(--ef12-appBarHeight);
+.MuiAppBar-root.MuiAppBar-positionFixed + div[aria-hidden="true"] {
+    min-height: calc(var(--murphyTV-appBarHeight)
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+}
+
+.MuiAppBar-root > .MuiToolbar-root:first-child {
+    min-height: var(--murphyTV-appBarHeight);
     gap: 0;
 }
 
-.MuiAppBar-root>.MuiToolbar-root:nth-child(2) {
-    min-height: var(--ef12-libraryToolbarHeight);
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) {
+    min-height: var(--murphyTV-libraryToolbarHeight);
 }
 
 :root.layout-desktop {
-    --ef12-appBarHeight: var(--ef12-appBarHeightDesktop);
+    --murphyTV-appBarHeight: var(--murphyTV-appBarHeightDesktop);
 }
 
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped) {
-    background-color: var(--ef12-navPillBackground);
-    border-radius: var(--ef12-navRadius);
+    background-color: var(--murphyTV-navPillBackground);
+    border-radius: var(--murphyTV-navRadius);
     color: var(--textColor);
     font-size: 1rem;
     font-weight: 400;
     padding-block: 0.35rem;
-    padding-inline: var(--ef12-navPaddingInline);
-    margin-inline: calc(var(--ef12-navGap) / 2);
+    padding-inline: var(--murphyTV-navPaddingInline);
+    margin-inline: calc(var(--murphyTV-navGap) / 2);
 }
 
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped) .MuiButton-startIcon {
     margin-left: 0;
     margin-right: 0.6rem;
-}
-
-.MuiAppBar-root .MuiButton-startIcon>img {
-    max-height: calc(var(--ef12-appBarIconSize) * 5 / 6) !important;
-    max-width: calc(var(--ef12-appBarIconSize) * 5 / 6) !important;
 }
 
 .MuiAppBar-root .MuiButton-textPrimary:not(.MuiButtonGroup-grouped) {
@@ -4388,15 +4458,64 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     color: var(--zeroContrastColor) !important;
 }
 
-.layout-desktop .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped, .MuiButton-textPrimary):hover {
+.layout-desktop .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped, .MuiButton-textPrimary, :has(.MuiButton-startIcon > img)):hover {
     background-color: var(--hoverTabBackgroundColor);
     color: var(--zeroContrastColor);
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) {
+    background-color: transparent;
+    color: var(--fullContrastColor);
+    font-size: var(--murphyTV-brandNameSize);
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    margin-inline: 0 var(--murphyTV-brandGap);
+    padding-block: 0;
+    padding-inline: 0;
+    position: relative;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img):has(+ .MuiButton-text)::after {
+    background: var(--murphyTV-brandRuleColor);
+    content: "";
+    height: 1.75rem;
+    pointer-events: none;
+    position: absolute;
+    right: calc((var(--murphyTV-brandGap) + var(--murphyTV-navGap) / 2) / -2);
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--borderWidth);
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img):not(:has(+ .MuiButton-text)) {
+    margin-inline: 0;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon {
+    margin-right: 0.75rem;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiTouchRipple-root {
+    display: none;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
+    max-height: var(--murphyTV-brandLogoSize) !important;
+    max-width: var(--murphyTV-brandLogoSize) !important;
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) {
+    text-shadow: var(--iconShadow);
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
+    filter: drop-shadow(0 0 2px hsla(0, 0%, 0%, 0.8)) drop-shadow(1px 1px 0 hsla(0, 0%, 0%, 0.5));
 }
 
 .MuiAppBar-root .MuiButtonGroup-contained {
     background: var(--btnPlayColor);
     border: 0;
-    border-radius: var(--ef12-navRadius);
+    border-radius: var(--murphyTV-navRadius);
     box-shadow: none;
     overflow: hidden;
 }
@@ -4409,10 +4528,10 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     color: var(--zeroContrastColor) !important;
     font-size: 1rem;
     font-weight: 400;
-    padding-inline: var(--ef12-navPaddingInline);
+    padding-inline: var(--murphyTV-navPaddingInline);
 }
 
-.MuiAppBar-root .MuiButtonGroup-contained .MuiButton-contained+.MuiButton-contained {
+.MuiAppBar-root .MuiButtonGroup-contained .MuiButton-contained + .MuiButton-contained {
     box-shadow: inset var(--borderWidth) 0 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -4422,8 +4541,8 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
 }
 
 .MuiAppBar-root .MuiButtonGroup-text {
-    background: var(--ef12-navPillBackground);
-    border-radius: var(--ef12-navRadius);
+    background: var(--murphyTV-navPillBackground);
+    border-radius: var(--murphyTV-navRadius);
     overflow: hidden;
 }
 
@@ -4447,27 +4566,27 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     opacity: 0.5;
 }
 
-.MuiAppBar-root>.MuiToolbar-root:nth-child(2) .MuiButton-text .MuiTypography-root {
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) .MuiButton-text .MuiTypography-root {
     font-size: 1.15rem;
     font-weight: 500;
 }
 
-.MuiAppBar-root>.MuiToolbar-root:nth-child(2) .MuiButton-text:not(.MuiButtonGroup-grouped) {
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) .MuiButton-text:not(.MuiButtonGroup-grouped) {
     min-height: calc(1.75rem + 12px);
 }
 
-.MuiAppBar-root>.MuiToolbar-root:nth-child(2)>.MuiButton-text:first-child {
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) > .MuiButton-text:first-child {
     margin-inline-start: 0;
 }
 
-:root.layout-mobile .MuiAppBar-root>.MuiToolbar-root:nth-child(2) {
-    padding-bottom: var(--ef12-libraryToolbarGap);
+:root.layout-mobile .MuiAppBar-root > .MuiToolbar-root:nth-child(2) {
+    padding-bottom: var(--murphyTV-libraryToolbarGap);
 }
 
 .MuiAppBar-root .MuiChip-root {
     background-color: transparent;
     border: var(--defaultBorder);
-    border-radius: var(--ef12-navRadius);
+    border-radius: var(--murphyTV-navRadius);
     color: var(--dimTextColor);
     font-size: 0.9rem;
     height: auto;
@@ -4512,13 +4631,13 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     text-align: start;
 }
 
-.MuiDrawer-root .MuiDrawer-paper .navMenuOption>.navMenuOptionIcon {
+.MuiDrawer-root .MuiDrawer-paper .navMenuOption > .navMenuOptionIcon {
     min-width: 36px;
     margin-inline-end: 0;
     font-size: 1.5rem;
 }
 
-.MuiDrawer-root .MuiDrawer-paper .navMenuOption>.navMenuOptionText {
+.MuiDrawer-root .MuiDrawer-paper .navMenuOption > .navMenuOptionText {
     margin-block: 4px;
     line-height: 1.5;
 }
@@ -4532,27 +4651,54 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
 }
 
 .MuiMenu-paper,
-.MuiDialog-paper,
 .MuiPopover-paper,
+.MuiDialog-paper,
 .MuiAutocomplete-paper {
     background-color: var(--drawerColor);
     background-image: none;
-    -webkit-backdrop-filter: var(--ef12-surfaceBlur);
-    backdrop-filter: var(--ef12-surfaceBlur);
+    -webkit-backdrop-filter: var(--murphyTV-surfaceBlur);
+    backdrop-filter: var(--murphyTV-surfaceBlur);
     border: var(--defaultBorder);
-    border-radius: var(--ef12-surfaceRadius);
+    border-radius: var(--murphyTV-surfaceRadius);
     box-shadow: var(--cardShadow);
     color: var(--textColor);
 }
 
 .MuiPopover-paper[style*="transform-origin"][style*=" 0px;"] {
-    margin-top: var(--ef12-menuGap);
+    margin-top: var(--murphyTV-menuGap);
+}
+
+#app-user-menu .MuiPopover-paper {
+    margin-top: calc(var(--murphyTV-menuGap) + 0.5rem);
 }
 
 .MuiMenuItem-root,
 .MuiAutocomplete-option {
     border-radius: var(--smallRadius);
     margin-inline: 0.3em;
+}
+
+@media not all and (min-width: 600px) {
+    #app-user-menu .MuiMenuItem-root {
+        font-size: var(--murphyTV-userMenuFontSize);
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiTypography-root {
+        font-size: inherit;
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiSvgIcon-root {
+        font-size: 1.45em;
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiListItemIcon-root {
+        min-width: 2.25em;
+    }
+
+    #app-user-menu .MuiPopover-paper {
+        left: auto !important;
+        right: calc(max(3.3%, env(safe-area-inset-right)) + 1rem);
+    }
 }
 
 .MuiMenuItem-root.Mui-selected,
@@ -4563,6 +4709,18 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
 
 .MuiDivider-root {
     border-color: var(--dividerColor);
+}
+
+#app-user-menu .MuiDivider-root[data-plugin-pages="true"] {
+    margin-block: calc(1 * var(--jf-spacing));
+}
+
+#app-user-menu .MuiListItemIcon-root > .material-icons {
+    font-size: 1.5rem;
+}
+
+#app-user-menu [data-plugin-pages="true"] .MuiButton-startIcon {
+    margin-inline: 0;
 }
 
 .MuiTooltip-tooltip {
@@ -4584,13 +4742,13 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     border-radius: var(--smallRadius);
 }
 
-.MuiFilledInput-root::after,
-.MuiFilledInput-root::before {
+.MuiFilledInput-root::before,
+.MuiFilledInput-root::after {
     border-bottom: 0;
 }
 
-.MuiRadio-root.Mui-checked,
 .MuiCheckbox-root.Mui-checked,
+.MuiRadio-root.Mui-checked,
 .MuiSwitch-switchBase.Mui-checked {
     color: var(--checkboxCheckedBgColor);
 }
@@ -4600,13 +4758,15 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     outline-offset: 2px;
 }
 
+body:has(.videoPlayerContainer-onTop) .MuiAppBar-root,
+body:has(.videoPlayerContainer-onTop) .MuiAppBar-root + div[aria-hidden="true"],
 body:has(.videoOsd-appBar) .MuiAppBar-root,
-body:has(.videoPlayerContainer-onTop) .MuiAppBar-root {
+body:has(.videoOsd-appBar) .MuiAppBar-root + div[aria-hidden="true"] {
     display: none;
 }
 
 .osdHeader .MuiToolbar-root {
-    min-height: var(--ef12-osdToolbarHeight);
+    min-height: var(--murphyTV-osdToolbarHeight);
     align-items: center;
 }
 
@@ -4637,31 +4797,73 @@ body:has(.videoPlayerContainer-onTop) .MuiAppBar-root {
     padding-inline: 0;
 }
 
-.gradient-overlay.full-width-video,
-.backdrop-container.full-width-video {
-    mask-image: none;
-    -webkit-mask-image: none;
+@container ef12mediabar (width < 96.7vw) {
+    .backdrop-container.full-width-video,
+    .gradient-overlay.full-width-video {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
 }
 
 :root {
-    --ef12-mediaBarHeight: 62vh;
-    --ef12-mediaBarGap: 1.25rem;
+    --murphyTV-mediaBarHeight: 62vh;
+    --murphyTV-mediaBarGap: 1.25rem;
 }
 
 @media only screen and (max-height: 767px) and (orientation: landscape) {
     :root {
-        --ef12-mediaBarHeight: 57vh;
+        --murphyTV-mediaBarHeight: 57vh;
+    }
+}
+
+:root:has(#slides-container) {
+    --murphyTV-mediaBarV2Height: 90vh;
+    --murphyTV-mediaBarV2StockDrop: max(0px, calc(var(--murphyTV-mediaBarV2Height)
+        - var(--murphyTV-mediaBarHeight) - var(--murphyTV-mediaBarGap) - 5rem));
+    --murphyTV-mediaBarV2StockRail: calc(var(--murphyTV-appBarHeight)
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))
+        + 2.5rem + 1rem);
+}
+
+@container ef12mediabar (width < 96.7vw) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .mute-button {
+        top: 1em !important;
+    }
+}
+
+@container ef12mediabar (width >= 96.7vw) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) :is(.pause-button, .mute-button) {
+        top: var(--murphyTV-mediaBarV2StockRail) !important;
+    }
+
+    @media only screen and (max-width: 767px) and (orientation: portrait) {
+        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .slide {
+            padding-bottom: calc(var(--murphyTV-mediaBarV2StockDrop) + 1.5em);
+        }
+        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .dots-container {
+            top: calc(var(--murphyTV-mediaBarV2StockRail) + 1rem);
+            padding-bottom: 1rem !important;
+        }
+    }
+}
+
+@media (min-width: 75em) {
+    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
+        top: calc(var(--appBarHeight) + 1.25em + var(--murphyTV-mediaBarHeight)
+            + 0.5rem - var(--murphyTV-appBarHeight)) !important;
     }
 }
 
 @media not all and (min-width: 75em) {
-    body:has(.MuiAppBar-root):has(#slides-container):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container {
-        top: calc(var(--ef12-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)) + var(--ef12-mediaBarGap));
-        height: var(--ef12-mediaBarHeight);
+    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
+        top: calc(var(--murphyTV-mediaBarHeight) + 1.25em + 0.5rem) !important;
     }
+}
 
-    body:has(.MuiAppBar-root):has(#slides-container):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
-        top: calc(var(--ef12-mediaBarHeight) + var(--ef12-mediaBarGap)) !important;
+@media not all and (min-width: 75em) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container {
+        --appBarHeight: calc((var(--murphyTV-appBarHeight)
+            + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))) / 2);
     }
 }
 
@@ -4700,7 +4902,7 @@ body:has(.videoPlayerContainer-onTop) .MuiAppBar-root {
         padding-inline: 0 !important;
     }
 
-    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container :is(.logo-container, .info-container, .button-container) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container :is(.logo-container, .info-container, .genre, .button-container) {
         position: static;
         inset: auto;
         transform: none;
@@ -4771,36 +4973,204 @@ body:has(.MuiAppBar-root) #slides-container .trailer-button {
     }
 }
 
+body:has(.MuiAppBar-root) #slides-container {
+    container-type: size;
+    container-name: ef12mediabar;
+}
+
+:root:has(#slides-container .slide-content) {
+    --murphyTV-mediaBarV3Height: var(--murphyTV-mediaBarHeight, 62vh);
+    --murphyTV-mediaBarV3Inset: 3.75rem;
+    --murphyTV-mediaBarV3Rail: 1em;
+    --murphyTV-mediaBarV3Edge: 0.8em;
+    --murphyTV-mediaBarV3ChromePitch: 2.7em;
+    --murphyTV-mediaBarV3ArrowSize: 2.25rem;
+    --murphyTV-mediaBarV3SectionsTop: calc(var(--murphyTV-mediaBarV3Height)
+        + var(--murphyTV-mediaBarGap, 1.25rem) * 2 + 0.75rem);
+    --murphyTV-mediaBarV3BarHeight: var(--slideshow-height, 100vh);
+    --murphyTV-mediaBarV3BarUsed: max(var(--murphyTV-mediaBarV3BarHeight),
+        calc(var(--murphyTV-mediaBarV3SectionsTop) + 5rem + 20vh));
+    --murphyTV-mediaBarV3StockDrop: calc(var(--murphyTV-mediaBarV3BarUsed)
+        - var(--murphyTV-mediaBarV3SectionsTop) - 1.5rem);
+    --murphyTV-mediaBarV3StockRow: calc(var(--murphyTV-mediaBarV3StockDrop) - 2.7rem);
+}
+
+body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
+    --slideshow-height: var(--murphyTV-mediaBarV3BarUsed);
+}
+
+:root.layout-mobile #slides-container:has(.slide-content) {
+    --murphyTV-mediaBarV3ChromeSize: 2rem;
+    --murphyTV-mediaBarV3Inset: 1.25rem;
+}
+
+:root.layout-desktop #slides-container.layout-plate:has(.slide-content) {
+    --murphyTV-mediaBarV3Inset: 1rem;
+}
+
+@container ef12mediabar (width < 96.7vw) {
+    #slides-container:has(.slide-content) .slide-content {
+        bottom: var(--murphyTV-mediaBarV3Inset);
+        max-height: calc(100% - var(--murphyTV-mediaBarV3Inset));
+    }
+
+    #slides-container:has(.slide-content) .plot-container {
+        flex: 0 0 auto !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    #slides-container.layout-plate:has(.slide-content) .plate-specs {
+        flex: 0 0 auto !important;
+        overflow: visible !important;
+    }
+
+    #slides-container:has(.slide-content) .ss-settings-toggle {
+        top: var(--murphyTV-mediaBarV3Rail) !important;
+    }
+
+    #slides-container:has(.slide-content) .arrow {
+        top: auto !important;
+        left: auto !important;
+        bottom: var(--murphyTV-mediaBarV3Rail) !important;
+        transform: none !important;
+    }
+
+    #slides-container:has(.slide-content) .right-arrow {
+        right: var(--murphyTV-mediaBarV3Edge) !important;
+    }
+
+    #slides-container:has(.slide-content) .left-arrow {
+        right: calc(var(--murphyTV-mediaBarV3Edge) + var(--murphyTV-mediaBarV3ChromePitch)) !important;
+    }
+
+    #slides-container:has(.slide-content) .dots-container {
+        top: auto !important;
+        bottom: calc(var(--murphyTV-mediaBarV3Rail) + 0.55rem) !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+
+    #slides-container.layout-plate:has(.slide-content) .dots-container {
+        display: none !important;
+    }
+
+    #slides-container:has(.slide-content) :is(.backdrop-overlay, .gradient-overlay) {
+        background: none !important;
+    }
+
+    #slides-container:has(.slide-content) .slide {
+        --slideshow-bottom-fade: linear-gradient(to top, #000 0%, #000 100%);
+        --slideshow-height: var(--murphyTV-mediaBarV3BarHeight);
+    }
+
+    :root.layout-desktop #slides-container.layout-plate:has(.slide-content) .slide-content {
+        max-height: calc(100% - var(--murphyTV-mediaBarV3Inset) * 2);
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) :is(.pause-button, .volume-toggle, .ss-settings-toggle) {
+        width: var(--murphyTV-mediaBarV3ChromeSize) !important;
+        height: var(--murphyTV-mediaBarV3ChromeSize) !important;
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) :is(.pause-button, .volume-toggle, .ss-settings-toggle) i {
+        font-size: var(--murphyTV-mediaBarV3ChromeSize) !important;
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) .dots-container {
+        top: var(--murphyTV-mediaBarV3Rail) !important;
+        height: var(--murphyTV-mediaBarV3ChromeSize) !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        align-items: center !important;
+        bottom: auto !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    :root.layout-mobile #slides-container.layout-plate:has(.slide-content) .plate {
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+}
+
+body:has(#slides-container .slide-content) .homeSectionsContainer {
+    margin-top: 0 !important;
+    top: var(--murphyTV-mediaBarV3SectionsTop) !important;
+}
+
+@container ef12mediabar (width >= 96.7vw) {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide {
+        --murphyTV-mediaBarV3FadeSpan: calc(100% - var(--murphyTV-mediaBarV3SectionsTop) - 5rem);
+        --slideshow-bottom-fade: linear-gradient(to top,
+            transparent 0,
+            rgb(0 0 0 / 0.55) calc(var(--murphyTV-mediaBarV3FadeSpan) * 0.45),
+            #000 var(--murphyTV-mediaBarV3FadeSpan));
+    }
+
+    :root:is(.layout-desktop, .layout-mobile) #slides-container.layout-plate:has(.slide-content) .plate {
+        -webkit-mask-image: var(--slideshow-bottom-fade) !important;
+        mask-image: var(--slideshow-bottom-fade) !important;
+    }
+}
+
+@container ef12mediabar (width >= 96.7vw) {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide-content {
+        bottom: var(--murphyTV-mediaBarV3StockDrop);
+        max-height: calc(100% - var(--murphyTV-mediaBarV3StockDrop) - 2rem);
+    }
+
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .dots-container {
+        top: auto !important;
+        bottom: var(--murphyTV-mediaBarV3StockRow) !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .arrow {
+        top: auto !important;
+        bottom: var(--murphyTV-mediaBarV3StockRow) !important;
+        transform: none !important;
+    }
+}
+
 @media (hover: hover) and (pointer: fine) {
+    .MuiAppBar-root .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
     .osdHeader .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
-    .MuiAppBar-root .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled) {
+    .cardOverlayButton-br .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled) {
         background-color: var(--hoverBackgroundColor);
         color: var(--zeroContrastColor);
         text-shadow: none;
     }
 }
 
-.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)),
-.MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)) {
+.MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)),
+.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) {
     padding: 0.5545rem;
     align-self: center;
 }
 
-.osdHeader .MuiIconButton-root,
 .MuiAppBar-root .MuiIconButton-root,
-.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light {
-    margin-inline: calc(var(--ef12-iconButtonGap) / 2);
+.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light,
+.osdHeader .MuiIconButton-root {
+    margin-inline: calc(var(--murphyTV-iconButtonGap) / 2);
 }
 
 .MuiAppBar-root .MuiIconButton-root:has(.MuiAvatar-root) {
     margin-inline-end: 1rem;
 }
 
-.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiIcon-root,
-.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiSvgIcon-root,
+.MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiSvgIcon-root,
 .MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiIcon-root,
-.MuiAppBar-root .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiSvgIcon-root {
-    font-size: var(--ef12-appBarIconSize);
+.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiSvgIcon-root,
+.osdHeader .MuiIconButton-root:not(:has(.MuiAvatar-root)) .MuiIcon-root {
+    font-size: var(--murphyTV-appBarIconSize);
 }
 
 .MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light {
@@ -4809,33 +5179,266 @@ body:has(.MuiAppBar-root) #slides-container .trailer-button {
     padding: 0 !important;
 }
 
-.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light>.material-icons {
+.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light > .material-icons {
     font-size: 1.25rem !important;
 }
 
-:is([aria-controls="app-remote-play-menu"], #popupPreviewButton)>svg,
-[aria-controls="app-remote-play-active-menu"] .MuiButton-startIcon>svg {
+:is([aria-controls="app-remote-play-menu"], #popupPreviewButton) > svg,
+[aria-controls="app-remote-play-active-menu"] .MuiButton-startIcon > svg {
     display: none;
 }
 
+:is([aria-controls="app-remote-play-menu"], #popupPreviewButton)::before,
+[aria-controls="app-remote-play-active-menu"] .MuiButton-startIcon::before {
+    display: inline-block;
+    font-family: var(--iconPack), "Material Icons";
+    font-feature-settings: "liga";
+    font-style: normal;
+    font-variation-settings: "FILL" var(--fill), "wght" var(--wght), "GRAD" var(--grad), "opsz" var(--opsz);
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1;
+    text-rendering: geometricPrecision;
+    text-transform: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+}
+
+[aria-controls="app-remote-play-menu"]::before {
+    content: "cast";
+    font-size: var(--murphyTV-appBarIconSize);
+}
+
+[aria-controls="app-remote-play-active-menu"] .MuiButton-startIcon::before {
+    content: "cast_connected";
+    font-size: var(--murphyTV-appBarIconSize);
+}
+
 #popupPreviewButton::before {
-    content: var(--ef12-episodePreviewIcon);
+    content: var(--murphyTV-episodePreviewIcon);
     font-size: 1.25em;
 }
 
-.itemExternalLinks>.seerr-link {
+.cardOverlayButton-br > button.cardOverlayButton {
+    box-sizing: border-box;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    position: relative;
+}
+
+.cardOverlayButton-br > button.cardOverlayButton > .cardOverlayButtonIcon,
+.cardOverlayButton-br > button.cardOverlayButton > .MuiSvgIcon-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.itemExternalLinks > .seerr-link {
     display: inline-block;
     margin-inline-start: 0.29em;
 }
 
-.itemExternalLinks>.seerr-link>.seerr-link-img {
+.itemExternalLinks > .seerr-link > .seerr-link-img {
     display: inline;
     width: auto !important;
-    height: var(--ef12-linkMarkHeight) !important;
-    vertical-align: calc((1cap - var(--ef12-linkMarkHeight)) / 2);
+    height: var(--murphyTV-linkMarkHeight) !important;
+    vertical-align: calc((1cap - var(--murphyTV-linkMarkHeight)) / 2);
 }
 
-body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-cards)>.sectionTitle-cards {
+.streaming-lookup-container {
+    margin-block: 0.75em !important;
+}
+
+.streaming-lookup-container > div {
+    align-items: center !important;
+    background: var(--lighterGradientPointAlpha) !important;
+    border: var(--borderWidth) solid var(--borderColor) !important;
+    border-radius: var(--smallRadius) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5em !important;
+    margin: 0 !important;
+    padding: 0.5em 0.75em !important;
+}
+
+.streaming-lookup-container > div > div:first-child {
+    display: contents !important;
+}
+
+.streaming-lookup-container > div > div:first-child > div {
+    gap: 0.4em !important;
+    margin-left: auto !important;
+    order: 1 !important;
+}
+
+.streaming-lookup-container > div > div:first-child > .elsewhere-link-reset {
+    color: var(--textColor) !important;
+    flex: 0 0 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.streaming-lookup-container > div:has(.elsewhere-custom-branding)::before {
+    color: var(--textColor);
+    content: var(--murphyTV-elsewhereLabel, none);
+    flex: 0 0 100%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.streaming-lookup-container .elsewhere-custom-branding {
+    align-items: center !important;
+    background: var(--selectorBackgroundColor) !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+    flex: 0 0 auto !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    gap: 0.6em !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+}
+
+.streaming-lookup-container .elsewhere-custom-branding-icon {
+    height: 20px !important;
+    margin: 0 !important;
+    order: -1 !important;
+    width: 20px !important;
+}
+
+.streaming-lookup-container > div > div:not(:first-child, #streaming-result-container) {
+    gap: 0.4em !important;
+    margin: 0 !important;
+}
+
+.streaming-lookup-container > div > div:not(:first-child, #streaming-result-container) > div {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+    margin: 0 !important;
+}
+
+.streaming-lookup-container :is(.elsewhere-search-button, .elsewhere-settings-button) {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+}
+
+#streaming-result-container {
+    flex: 0 0 100% !important;
+    margin: 0 !important;
+    order: 2 !important;
+}
+
+#streaming-result-container > div {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: var(--darkerGradientPointAlpha) !important;
+    border: var(--borderWidth) solid var(--borderColor) !important;
+    border-radius: var(--smallRadius) !important;
+    margin: 0.4em 0 0 !important;
+    padding: 0.5em 0.75em !important;
+}
+
+#streaming-result-container .elsewhere-link-reset {
+    color: var(--textColor) !important;
+    flex: 1 1 auto !important;
+}
+
+#streaming-result-container > div > div:first-child {
+    margin-bottom: 0.4em !important;
+}
+
+#streaming-result-container > div > div:not(:first-child) {
+    gap: 0.4em !important;
+    margin: 0 !important;
+}
+
+#streaming-result-container > div > div:not(:first-child) > div {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+    margin: 0 !important;
+}
+
+#streaming-result-container button {
+    background: var(--selectorBackgroundColor) !important;
+    border: 0 !important;
+    border-radius: var(--smallerRadius) !important;
+    color: var(--textColor) !important;
+}
+
+#streaming-result-container > div[style*="139, 19, 19"] {
+    background: color-mix(in srgb, var(--btnDeleteColor) 35%, transparent) !important;
+    border-color: var(--btnDeleteBorderColor) !important;
+}
+
+#streaming-result-container [style*="255, 20, 20"] {
+    color: var(--btnDeleteBorderColor) !important;
+}
+
+.tmdb-reviews-section > summary.sectionTitle {
+    font-weight: 600;
+}
+
+.tmdb-reviews-section .tmdb-review-card {
+    background: var(--lighterGradientPointAlpha);
+    border-left: 0;
+    border-radius: var(--smallRadius);
+    box-shadow: inset 0 0 0 var(--borderWidth) var(--borderColor);
+}
+
+.tmdb-reviews-section .tmdb-review-author {
+    color: var(--fullContrastColor);
+}
+
+.tmdb-reviews-section .tmdb-review-date {
+    color: var(--dimTextColor);
+}
+
+.tmdb-reviews-section .tmdb-review-text {
+    color: var(--textColor);
+}
+
+.tmdb-reviews-section .tmdb-review-toggle {
+    color: var(--dimTextColor);
+}
+
+.tmdb-reviews-section .tmdb-review-toggle:hover {
+    color: var(--textColor);
+}
+
+.tmdb-reviews-section .tmdb-review-rating {
+    border-radius: var(--smallerRadius);
+}
+
+.tmdb-reviews-section .je-review-btn {
+    background: var(--btnSubmitColor);
+    border: var(--borderWidth) solid var(--btnSubmitBorderColor);
+    border-radius: var(--smallRadius);
+    color: var(--fullContrastColor);
+}
+
+.tmdb-reviews-section .je-review-form {
+    background: var(--lighterGradientPointAlpha);
+    border: var(--borderWidth) solid var(--borderColor);
+    border-radius: var(--smallRadius);
+}
+
+.tmdb-reviews-section .je-review-textarea {
+    background: var(--selectorBackgroundColor);
+    border: var(--borderWidth) solid var(--lighterBorderColor);
+    border-radius: var(--smallRadius);
+    color: var(--textColor);
+}
+
+body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
     padding-bottom: calc(0.3em + 0.2rem);
 }
 
@@ -4848,11 +5451,167 @@ body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-
     height: auto;
 }
 
-.cardScalable>.innerCardFooter.itemProgressBar {
+.cardScalable > .innerCardFooter.itemProgressBar {
     position: absolute;
     inset: auto 1em 1em;
     width: auto;
     padding: 0;
+}
+
+body [data-jf-ieg-root="1"] {
+    --axis: var(--selectorBackgroundColor);
+    --axis2: var(--lighterGradientPoint);
+    max-width: calc(100% - 3.3%);
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-box {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-panel {
+    background: var(--lighterGradientPointAlpha);
+    border-radius: var(--smallRadius);
+    border-top: 0;
+    box-shadow: inset 0 0 0 var(--borderWidth) var(--borderColor);
+    display: grid;
+    grid-template-rows: 1fr;
+    overflow: visible;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-body {
+    background: none;
+    min-height: 0;
+    overflow: hidden;
+    padding: 1rem 0.45rem 1rem 1rem !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    [data-jf-ieg-root="1"] .jf-ieg-panel {
+        transition:
+            grid-template-rows var(--murphyTV-ratingsGridOpen) ease,
+            opacity calc(var(--murphyTV-ratingsGridOpen) * 0.7) ease,
+            display var(--murphyTV-ratingsGridOpen) allow-discrete;
+    }
+
+    [data-jf-ieg-root="1"] .jf-ieg-panel[hidden] {
+        grid-template-rows: 0fr;
+        opacity: 0;
+    }
+
+    @starting-style {
+        [data-jf-ieg-root="1"] .jf-ieg-panel:not([hidden]) {
+            grid-template-rows: 0fr;
+            opacity: 0;
+        }
+    }
+
+    [data-jf-ieg-root="1"] .jf-ieg-toggle-icon {
+        transition: transform var(--murphyTV-ratingsGridOpen) ease;
+    }
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle {
+    background: none;
+    margin-bottom: 0.35em;
+    padding: 0;
+    width: fit-content;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle:hover {
+    background: none;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.layout-mobile [data-jf-ieg-root="1"] .jf-ieg-toggle-label {
+    font-size: 1.35rem;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle-icon {
+    color: var(--dimTextColor);
+    opacity: 1;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-toggle:hover .jf-ieg-toggle-icon {
+    color: var(--textColor);
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-cell {
+    border-color: var(--borderColor);
+    border-radius: 0.5rem;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-corner,
+[data-jf-ieg-root="1"] .jf-ieg-season,
+[data-jf-ieg-root="1"] .jf-ieg-episode,
+[data-jf-ieg-root="1"] .jf-ieg-sticky-left {
+    border-color: var(--borderColor) !important;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-empty {
+    background: var(--lighterGradientPointAlpha) !important;
+    border-color: var(--borderColor) !important;
+    color: var(--dimTextColor) !important;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-link {
+    color: var(--dimTextColor) !important;
+}
+
+[data-jf-ieg-root="1"] .jf-ieg-link:hover {
+    color: var(--textColor) !important;
+}
+
+body #jf-hover-tooltip {
+    background: var(--drawerColor);
+    -webkit-backdrop-filter: var(--murphyTV-surfaceBlur);
+    backdrop-filter: var(--murphyTV-surfaceBlur);
+    border: var(--defaultBorder);
+    border-radius: var(--murphyTV-surfaceRadius);
+    box-shadow: var(--cardShadow);
+    color: var(--textColor);
+    font-family: inherit;
+}
+
+#jf-hover-tooltip .jf-tooltip-title {
+    color: var(--fullContrastColor);
+}
+
+#jf-hover-tooltip .jf-tooltip-meta {
+    color: var(--dimTextColor);
+}
+
+#jf-hover-tooltip .jf-tooltip-meta > span {
+    color: var(--borderColor) !important;
+    margin-inline: 0.5em;
+}
+
+#jf-hover-tooltip .jf-tooltip-overview {
+    color: var(--textColor);
+}
+
+.itemLinearProgress.MuiLinearProgress-root {
+    -webkit-backdrop-filter: var(--blurLarge);
+    backdrop-filter: var(--blurLarge);
+    background-color: var(--osdSeekBarBufferedColorAlpha);
+    border-radius: var(--largeRadius);
+    height: 0.35em;
+    inset: auto 2em 2em;
+    overflow: hidden;
+    width: auto;
+}
+
+.itemLinearProgress .MuiLinearProgress-bar {
+    background-color: var(--cardResumeProgressColor);
+    border-radius: 0 var(--largeRadius) var(--largeRadius) 0;
+    opacity: 0.75;
 }
 
 .countIndicator,
@@ -4869,7 +5628,7 @@ body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-
 }
 
 #myPreferencesMenuPage .readOnlyContent:after {
-    content: "MurphyTV — v1.0.0";
+    content: var(--themeVersion);
     color: #FF0000 !important;
     font-weight: bold;
 }
