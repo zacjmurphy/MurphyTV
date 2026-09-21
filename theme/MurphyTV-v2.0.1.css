@@ -1552,6 +1552,20 @@ body #je-active-streams-panel {
     border-bottom-color: var(--borderColor);
 }
 
+#je-active-streams-panel .je-as-panel-header {
+    gap: var(--murphyTV-iconButtonGap);
+    justify-content: flex-start;
+}
+
+#je-active-streams-panel .je-as-panel-title {
+    margin-right: auto;
+}
+
+#je-active-streams-panel .je-as-refresh-btn,
+#je-active-streams-panel .je-as-broadcast-btn {
+    margin-right: 0;
+}
+
 #je-active-streams-panel .je-as-panel-footer {
     border-top-color: var(--borderColor);
 }
