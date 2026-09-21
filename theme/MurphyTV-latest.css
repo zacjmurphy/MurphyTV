@@ -184,6 +184,7 @@
     --murphyTV-iconButtonGap: 0.58rem;
     --murphyTV-linkMarkHeight: 1.4cap;
     --murphyTV-elsewhereLabel: none;
+    --murphyTV-detailsSectionGap: 2.25rem;
     --murphyTV-ratingsGridOpen: 0.24s;
     --murphyTV-itemBarEnter: 0.35s;
     --murphyTV-userMenuFontSize: 1.15rem;
@@ -281,6 +282,37 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
 :root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage .detailSection > .nextUpSection,
 :root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage .detailSection > #listChildrenCollapsible {
     grid-column: 1 / -1;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPagePrimaryContent > .detailSection > .itemDetailsGroup:not(:has(> :not(:empty))) {
+    display: none;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPagePrimaryContent > .detailSection {
+    margin-bottom: 0;
+    row-gap: var(--murphyTV-detailsSectionGap);
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPagePrimaryContent > .detailSection > * {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPageSecondaryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--murphyTV-detailsSectionGap);
+    margin-top: var(--murphyTV-detailsSectionGap);
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPageSecondaryContainer > * {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .tmdb-reviews-section {
+    margin-bottom: 0;
+    margin-top: var(--murphyTV-detailsSectionGap);
 }
 
 :root.layout-mobile:has(.MuiAppBar-root) #myPreferencesMenuPage {
