@@ -184,7 +184,8 @@
     --murphyTV-iconButtonGap: 0.58rem;
     --murphyTV-linkMarkHeight: 1.4cap;
     --murphyTV-elsewhereLabel: none;
-    --murphyTV-detailsSectionGap: 2.25rem;
+    --murphyTV-detailsSectionGap: 15px;
+    --murphyTV-detailsSectionGapDesktop: 23px;
     --murphyTV-ratingsGridOpen: 0.24s;
     --murphyTV-itemBarEnter: 0.35s;
     --murphyTV-userMenuFontSize: 1.15rem;
@@ -506,6 +507,10 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
 
 :root.layout-desktop {
     --murphyTV-appBarHeight: var(--murphyTV-appBarHeightDesktop);
+}
+
+:root.layout-desktop {
+    --murphyTV-detailsSectionGap: var(--murphyTV-detailsSectionGapDesktop);
 }
 
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped) {
