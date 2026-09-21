@@ -97,6 +97,8 @@ Override any of these in your own Custom CSS, after the imports:
 | `--murphyTV-osdToolbarHeight` | `5rem` | Toolbar height inside the video OSD header |
 | `--murphyTV-episodePreviewIcon` | `"video_library"` | Glyph for the in-player episode picker |
 | `--murphyTV-linkMarkHeight` | `1.4cap` | Logo mark height in the external-links row |
+| `--murphyTV-detailsSectionGap` | `15px` | Space between an item page's sections |
+| `--murphyTV-detailsSectionGapDesktop` | `23px` | The same gap, desktop layout only |
 | `--murphyTV-mediaBarHeight` | `62vh` | Media Bar only: bar height, and what the home sections clear |
 | `--murphyTV-mediaBarGap` | `1.25rem` | Media Bar only: the gap above and below the bar |
 | `--murphyTV-itemBarEnter` | `0.35s` | How long an item page's app bar takes to fade up to home's background on scroll |
